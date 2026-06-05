@@ -1,7 +1,8 @@
 """Guide and home page content for Cozumel Cruise Excursion."""
 from cozumel_config import (
     BEACHES_IMG, BEACHES_ALT, BEST_IMG, BEST_ALT, CHANKANAAB_IMG, CHANKANAAB_ALT,
-    INTRO_IMG, INTRO_ALT, MR_SANCHOS_IMG, MR_SANCHOS_ALT, PORT_IMG, PORT_ALT,
+    INTRO_IMG, INTRO_ALT, MR_SANCHOS_IMG, MR_SANCHOS_ALT,
+    PORT_ARRIVAL_ALT, PORT_ARRIVAL_IMG, PORT_IMG, PORT_ALT,
     SNORKEL_IMG, SNORKEL_ALT,
 )
 from cozumel_helpers import (
@@ -164,7 +165,7 @@ def content_port_guide() -> str:
 <section class="py-12 bg-sand-50"><div class="max-w-7xl mx-auto px-4">
   <h2 class="text-2xl font-display font-bold text-center mb-8">Where Ships Arrive</h2>
   <div class="info-image rounded-3xl aspect-[21/9] shadow-xl overflow-hidden mb-8 max-w-5xl mx-auto">
-    <img src="{PORT_IMG}" alt="{PORT_ALT}" width="1200" height="514" loading="lazy" decoding="async" />
+    <img src="{PORT_ARRIVAL_IMG}" alt="{PORT_ARRIVAL_ALT}" width="1200" height="514" loading="lazy" decoding="async" />
   </div>
   <div class="grid lg:grid-cols-3 gap-6 text-sm">
     <div class="bg-white rounded-3xl p-6 border border-pr-100"><h3 class="font-display font-bold text-lg mb-2">Punta Langosta</h3><p class="text-gray-600">Downtown pier — walk to San Miguel shops, waterfront malecón and cafés in minutes. Taxis to south-side attractions.</p></div>

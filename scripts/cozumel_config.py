@@ -25,6 +25,11 @@ PORT_ALT = (
     "Colorful Cozumel Mexico cruise port sign with Royal Caribbean ship docked "
     "at the pier for cruise passenger shore excursions"
 )
+PORT_ARRIVAL_IMG = "images/cozumel-cruise-port-arrival.png"
+PORT_ARRIVAL_ALT = (
+    "Royal Caribbean cruise ship docked at Cozumel Mexico cruise port pier with "
+    "turquoise Caribbean water and tropical shoreline for cruise passengers"
+)
 BEST_IMG = "images/best-cozumel-excursions.png"
 BEST_ALT = (
     "Cozumel Mexico beach signpost with turquoise Caribbean water representing "
@@ -113,7 +118,7 @@ SCUBA_ALT = (
 )
 
 ALL_IMAGES = [
-    HOME_HERO, PORT_IMG, BEST_IMG, ONE_DAY_IMG, INTRO_IMG, BEACHES_IMG,
+    HOME_HERO, PORT_IMG, PORT_ARRIVAL_IMG, BEST_IMG, ONE_DAY_IMG, INTRO_IMG, BEACHES_IMG,
     CRYSTAL_IMG, BEST_OF_IMG, BEACH_DAY_IMG, SNORKEL_IMG, CHANKANAAB_IMG,
     MR_SANCHOS_IMG, JEEP_IMG, RUINS_IMG, CATAMARAN_IMG, ATV_IMG, TEQUILA_IMG,
     PRIVATE_ISLAND_IMG, SCUBA_IMG,
