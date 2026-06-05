@@ -26,6 +26,7 @@ CUSTOM_IMAGES: frozenset[str] = frozenset({
     "cozumel-private-island.png",
     "cozumel-cruise-port.png",
     "cozumel-cruise-port-arrival.png",
+    "el-cielo-sandbar.png",
 })
 
 DOWNLOADS: list[tuple[str, str, int]] = [

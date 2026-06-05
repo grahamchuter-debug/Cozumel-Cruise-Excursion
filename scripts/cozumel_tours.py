@@ -2,6 +2,7 @@
 from cozumel_config import (
     ATV_IMG, ATV_ALT, BEACH_DAY_IMG, BEACH_DAY_ALT, BEST_OF_IMG, BEST_OF_ALT,
     CATAMARAN_IMG, CATAMARAN_ALT, CHANKANAAB_IMG, CHANKANAAB_ALT,
+    EL_CIELO_IMG, EL_CIELO_ALT,
     CRYSTAL_IMG, CRYSTAL_ALT, JEEP_IMG, JEEP_ALT, MR_SANCHOS_IMG, MR_SANCHOS_ALT,
     PRIVATE_ISLAND_IMG, PRIVATE_ISLAND_ALT, RUINS_IMG, RUINS_ALT,
     SCUBA_IMG, SCUBA_ALT, SNORKEL_IMG, SNORKEL_ALT,
@@ -58,7 +59,7 @@ def all_tour_content() -> dict[str, str]:
             ],
             [
                 (SNORKEL_IMG, SNORKEL_ALT, "Palancar Reef", "Dramatic coral formations and tropical fish along Cozumel's south coast."),
-                (CATAMARAN_IMG, CATAMARAN_ALT, "El Cielo Sandbar", "Waist-deep crystal water with starfish and stingrays."),
+                (EL_CIELO_IMG, EL_CIELO_ALT, "El Cielo Sandbar", "Waist-deep crystal water with starfish and stingrays."),
                 (SNORKEL_IMG, SNORKEL_ALT, "Marine Life", "Parrotfish, angelfish, rays and occasional sea turtles."),
             ],
             dict(best_for="Swimmers and reef enthusiasts", activity_level="Moderate — boat and swim", popular="El Cielo, Palancar, Colombia Reef"),
@@ -149,7 +150,7 @@ def all_tour_content() -> dict[str, str]:
             [
                 (CATAMARAN_IMG, CATAMARAN_ALT, "Caribbean Sailing", "Spacious decks and shade while crossing Cozumel's leeward coast."),
                 (SNORKEL_IMG, SNORKEL_ALT, "Reef Snorkel Stops", "Colombia Reef and marine park sites with guide supervision."),
-                (CATAMARAN_IMG, CATAMARAN_ALT, "El Cielo Sandbar", "Iconic shallow sandbar with starfish and turquoise water."),
+                (EL_CIELO_IMG, EL_CIELO_ALT, "El Cielo Sandbar", "Iconic shallow sandbar with starfish and turquoise water."),
             ],
             dict(best_for="Couples and snorkel lovers", activity_level="Moderate — boat and swim", popular="Catamaran El Cielo, Colombia Reef sail"),
             CATAMARAN_IMG, CATAMARAN_ALT,

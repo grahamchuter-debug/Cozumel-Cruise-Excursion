@@ -96,6 +96,11 @@ CATAMARAN_ALT = (
     "Crystal clear turquoise Caribbean water off Cozumel Mexico for catamaran "
     "sail and snorkel cruise shore excursions"
 )
+EL_CIELO_IMG = "images/el-cielo-sandbar.png"
+EL_CIELO_ALT = (
+    "Starfish on white sand at El Cielo sandbar in Cozumel Mexico shallow "
+    "turquoise water on a cruise passenger snorkel excursion"
+)
 ATV_IMG = "images/cozumel-atv.png"
 ATV_ALT = (
     "ATV adventure tour through jungle trails on Cozumel Mexico island for "
@@ -120,7 +125,7 @@ SCUBA_ALT = (
 ALL_IMAGES = [
     HOME_HERO, PORT_IMG, PORT_ARRIVAL_IMG, BEST_IMG, ONE_DAY_IMG, INTRO_IMG, BEACHES_IMG,
     CRYSTAL_IMG, BEST_OF_IMG, BEACH_DAY_IMG, SNORKEL_IMG, CHANKANAAB_IMG,
-    MR_SANCHOS_IMG, JEEP_IMG, RUINS_IMG, CATAMARAN_IMG, ATV_IMG, TEQUILA_IMG,
+    MR_SANCHOS_IMG, JEEP_IMG, RUINS_IMG, CATAMARAN_IMG, EL_CIELO_IMG, ATV_IMG, TEQUILA_IMG,
     PRIVATE_ISLAND_IMG, SCUBA_IMG,
 ]
 
