@@ -1,0 +1,231 @@
+"""Tour page content for Cozumel Cruise Excursion."""
+from cozumel_config import (
+    ATV_IMG, ATV_ALT, BEACH_DAY_IMG, BEACH_DAY_ALT, BEST_OF_IMG, BEST_OF_ALT,
+    CATAMARAN_IMG, CATAMARAN_ALT, CHANKANAAB_IMG, CHANKANAAB_ALT,
+    JEEP_IMG, JEEP_ALT, MR_SANCHOS_IMG, MR_SANCHOS_ALT,
+    PRIVATE_ISLAND_IMG, PRIVATE_ISLAND_ALT, RUINS_IMG, RUINS_ALT,
+    SCUBA_IMG, SCUBA_ALT, SNORKEL_IMG, SNORKEL_ALT,
+    TEQUILA_IMG, TEQUILA_ALT,
+)
+from cozumel_helpers import content_tour_page
+
+
+def all_tour_content() -> dict[str, str]:
+    return {
+        "best-of-cozumel.html": content_tour_page(
+            "The Best of Cozumel tour distills the island into one cruise-friendly day — serene west-coast beaches, vibrant San Miguel markets, historic sites and a tequila tasting at a local hacienda before exploring downtown. Ideal for first-time visitors who want culture, scenery and a taste of Mexico without committing to a single activity.",
+            [
+                "5-hour format fits most 6–10 hour Cozumel port calls.",
+                "Combines beach time, Mayan heritage and downtown exploration.",
+                "Port pickup from Punta Langosta, International Pier and Puerta Maya.",
+                "Tequila tasting introduces regional agave culture in a relaxed setting.",
+            ],
+            [
+                (BEACH_DAY_IMG, BEACH_DAY_ALT, "West-Coast Beaches", "Calm Caribbean water and sandy stretches along Cozumel's leeward shore."),
+                (RUINS_IMG, RUINS_ALT, "Mayan Heritage", "Historic sites and cultural context across the island."),
+                (TEQUILA_IMG, TEQUILA_ALT, "Tequila Tasting", "Sample authentic Mexican spirits at a Cozumel hacienda."),
+            ],
+            dict(best_for="First-time visitors and culture seekers", activity_level="Moderate", popular="Island highlights, tequila, downtown"),
+            BEST_OF_IMG, BEST_OF_ALT,
+            badge="Best for First-Time Visitors",
+            extra_links=[("best-of-cozumel.html", "Best of Cozumel"), ("cozumel-tequila-tasting-tour.html", "Tequila Tour")],
+        ),
+        "cozumel-beach-day.html": content_tour_page(
+            "A dedicated Cozumel beach day gives cruise passengers exactly what many want — turquoise water, loungers, food and drinks without a packed activity schedule. West-coast beach clubs and day passes offer calm swimming, reef access nearby and all-inclusive packages timed for ship returns.",
+            [
+                "4–5 hours with transfers from all major Cozumel cruise piers.",
+                "All-inclusive options include food, drinks and beach amenities.",
+                "Easy activity level suits families, couples and relaxed travelers.",
+                "Allow 60–90 minutes return buffer before all aboard.",
+            ],
+            [
+                (BEACH_DAY_IMG, BEACH_DAY_ALT, "Crystal-Clear Water", "Protected west-coast bays with excellent visibility."),
+                (MR_SANCHOS_IMG, MR_SANCHOS_ALT, "Beach Club Amenities", "Loungers, pools, palapas and on-beach service."),
+                (CHANKANAAB_IMG, CHANKANAAB_ALT, "Reef Nearby", "Optional snorkel from select beach club locations."),
+            ],
+            dict(best_for="Relaxed port days and sun seekers", activity_level="Easy", family="Excellent for all ages", popular="Beach clubs, day passes, open bar"),
+            BEACH_DAY_IMG, BEACH_DAY_ALT,
+            badge="Best Beach Day",
+            extra_links=[("mr-sanchos-beach-club.html", "Mr Sanchos"), ("best-cozumel-beaches-for-cruise-passengers.html", "Beach Guide")],
+        ),
+        "cozumel-snorkeling-tour.html": content_tour_page(
+            "Cozumel sits along the Mesoamerican Reef — the world's second-largest barrier reef system. Snorkeling tours visit Palancar, Columbia Reef and the famous El Cielo sandbar where starfish dot shallow turquoise shallows. Catamaran and boat departures include gear, guides and cruise-timed returns.",
+            [
+                "4–6 hour trips with professional snorkel guides and equipment.",
+                "Multiple reef sites — visibility often exceeds 30 metres in dry season.",
+                "Morning departures recommended; seas are typically calmer before noon.",
+                "Reef-safe sunscreen or rash guards protect marine ecosystems.",
+            ],
+            [
+                (SNORKEL_IMG, SNORKEL_ALT, "Palancar Reef", "Dramatic coral formations and tropical fish along Cozumel's south coast."),
+                (CATAMARAN_IMG, CATAMARAN_ALT, "El Cielo Sandbar", "Waist-deep crystal water with starfish and stingrays."),
+                (SNORKEL_IMG, SNORKEL_ALT, "Marine Life", "Parrotfish, angelfish, rays and occasional sea turtles."),
+            ],
+            dict(best_for="Swimmers and reef enthusiasts", activity_level="Moderate — boat and swim", popular="El Cielo, Palancar, Colombia Reef"),
+            SNORKEL_IMG, SNORKEL_ALT,
+            badge="Best Snorkeling Tour",
+            extra_links=[("cozumel-catamaran-sail-and-snorkel.html", "Catamaran Snorkel")],
+        ),
+        "chankanaab-park-tour.html": content_tour_page(
+            "Chankanaab National Marine Park is Cozumel's flagship shore excursion destination — a protected lagoon, beach, snorkel reef, dolphin programs and botanical gardens 15 minutes south of the cruise port. Day passes let cruise passengers snorkel, swim and explore at their own pace with reliable return transfers.",
+            [
+                "3–5 hours inside the park with optional dolphin add-ons.",
+                "House reef snorkel included on many Chankanaab tour packages.",
+                "15–20 minute drive from Punta Langosta and International Pier.",
+                "Lockers, showers and restaurants available inside the park.",
+            ],
+            [
+                (CHANKANAAB_IMG, CHANKANAAB_ALT, "Lagoon &amp; Beach", "Calm swimming areas and shaded palapas along the shore."),
+                (SNORKEL_IMG, SNORKEL_ALT, "House Reef", "Snorkel directly from Chankanaab's protected reef zone."),
+                (CHANKANAAB_IMG, CHANKANAAB_ALT, "Marine Encounters", "Optional dolphin, manatee and sea lion programs."),
+            ],
+            dict(best_for="Families wanting one-stop island fun", activity_level="Easy to moderate", family="Excellent — check age limits for animal programs", popular="Chankanaab snorkel, dolphin swim, park pass"),
+            CHANKANAAB_IMG, CHANKANAAB_ALT,
+            badge="Best for Families",
+            extra_links=[("chankanaab-park-guide.html", "Chankanaab Guide"), ("cozumel-scuba-diving-tour.html", "Scuba at Chankanaab")],
+        ),
+        "mr-sanchos-beach-club.html": content_tour_page(
+            "Mr Sanchos Beach Club on Cozumel's west coast is a cruise passenger favourite — all-inclusive food and drinks, a large pool, beach loungers and calm Caribbean swimming about 20 minutes from the port. Pay-one-price packages simplify budgeting and operators coordinate return transfers for your ship schedule.",
+            [
+                "4–6 hour day passes with open bar and buffet options.",
+                "Pool, beach volleyball, water trampolines and palapa shade.",
+                "20-minute taxi or organised transfer from cruise terminals.",
+                "Reserve ahead on busy ship days — capacity can be limited.",
+            ],
+            [
+                (MR_SANCHOS_IMG, MR_SANCHOS_ALT, "Beach Club Pool", "Freshwater pool steps from the Caribbean shoreline."),
+                (BEACH_DAY_IMG, BEACH_DAY_ALT, "Loungers &amp; Palapas", "Reserved seating with waiter service on the sand."),
+                (MR_SANCHOS_IMG, MR_SANCHOS_ALT, "All-Inclusive Dining", "Mexican buffet, grill items and tropical cocktails."),
+            ],
+            dict(best_for="Couples and groups wanting hassle-free beach time", activity_level="Easy", family="Excellent — popular with families", popular="Mr Sanchos day pass, open bar beach clubs"),
+            MR_SANCHOS_IMG, MR_SANCHOS_ALT,
+            badge="Best Beach Day",
+            extra_links=[("mr-sanchos-cozumel-guide.html", "Mr Sanchos Guide"), ("cozumel-beach-day.html", "Beach Day Options")],
+        ),
+        "cozumel-jeep-tour.html": content_tour_page(
+            "Cozumel jeep tours blaze through jungle trails to El Cedral — the island's oldest Mayan settlement — then splash into Jade Caverns cenote and finish with a guided snorkel at Dzul-Ha Reef. Open-top jeeps, small groups and mixed terrain make this one of Cozumel's top adventure shore excursions.",
+            [
+                "5-hour adventure with snorkel gear and beverages included.",
+                "Moderate activity — bumpy jungle roads and water entry.",
+                "Driver's licence required for guests who want to drive.",
+                "Not ideal to combine with a separate long snorkel catamaran same day.",
+            ],
+            [
+                (JEEP_IMG, JEEP_ALT, "Jungle Trails", "Off-road driving through Cozumel's interior landscapes."),
+                (RUINS_IMG, RUINS_ALT, "El Cedral Ruins", "Oldest Mayan site on the island with cultural commentary."),
+                (SNORKEL_IMG, SNORKEL_ALT, "Dzul-Ha Reef Snorkel", "Guided reef snorkel after cenote swim at Jade Caverns."),
+            ],
+            dict(best_for="Adventure seekers and active couples", activity_level="Moderate — driving and swimming", popular="Jungle jeep, cenote, reef snorkel combo"),
+            JEEP_IMG, JEEP_ALT,
+            badge="Best Adventure Tour",
+            extra_links=[("cozumel-atv-adventure.html", "ATV Adventure"), ("cozumel-mayan-ruins-tour.html", "Mayan Ruins")],
+        ),
+        "cozumel-mayan-ruins-tour.html": content_tour_page(
+            "San Gervasio is Cozumel's premier Mayan archaeological site — a sacred complex dedicated to Ixchel, goddess of fertility and medicine. Shore excursions explore temple ruins, interpretive trails and island history, often paired with beach time on the return leg for a balanced port day.",
+            [
+                "4–5 hours including transport from cruise piers.",
+                "45-minute drive across the island to the archaeological zone.",
+                "Low to moderate walking on uneven stone paths — wear sturdy shoes.",
+                "Combine with tequila tasting or beach stop on many tour routes.",
+            ],
+            [
+                (RUINS_IMG, RUINS_ALT, "San Gervasio Temples", "Mayan structures hidden within Cozumel's jungle interior."),
+                (RUINS_IMG, RUINS_ALT, "Cultural Commentary", "Guides explain Ixchel worship and island Mayan history."),
+                (BEACH_DAY_IMG, BEACH_DAY_ALT, "Beach Extension", "Many tours add west-coast beach time after the ruins."),
+            ],
+            dict(best_for="History buffs and cultural explorers", activity_level="Low to moderate — walking", popular="San Gervasio ruins, Mayan culture tours"),
+            RUINS_IMG, RUINS_ALT,
+            badge="Best for First-Time Visitors",
+            extra_links=[("best-of-cozumel.html", "Best of Cozumel"), ("cozumel-jeep-tour.html", "Jeep Tour")],
+        ),
+        "cozumel-catamaran-sail-and-snorkel.html": content_tour_page(
+            "Sail Cozumel's turquoise channel aboard a spacious catamaran — snorkel Colombia Reef and El Cielo sandbar, float in waist-deep crystal water and enjoy lunch at a beach park. Catamaran tours are among the most popular Cozumel shore excursions for couples and groups who want sailing plus reef time.",
+            [
+                "4–6 hours with snorkel gear, lunch and beverages on many sailings.",
+                "Check sea conditions — operators may adjust routes in high wind.",
+                "Moderate activity level; basic swimming ability recommended.",
+                "Book early; catamaran El Cielo trips fill quickly in peak season.",
+            ],
+            [
+                (CATAMARAN_IMG, CATAMARAN_ALT, "Caribbean Sailing", "Spacious decks and shade while crossing Cozumel's leeward coast."),
+                (SNORKEL_IMG, SNORKEL_ALT, "Reef Snorkel Stops", "Colombia Reef and marine park sites with guide supervision."),
+                (CATAMARAN_IMG, CATAMARAN_ALT, "El Cielo Sandbar", "Iconic shallow sandbar with starfish and turquoise water."),
+            ],
+            dict(best_for="Couples and snorkel lovers", activity_level="Moderate — boat and swim", popular="Catamaran El Cielo, Colombia Reef sail"),
+            CATAMARAN_IMG, CATAMARAN_ALT,
+            badge="Best Snorkeling Tour",
+            extra_links=[("cozumel-snorkeling-tour.html", "Snorkeling Tours"), ("cozumel-private-island-tour.html", "Private Island")],
+        ),
+        "cozumel-atv-adventure.html": content_tour_page(
+            "ATV adventures on Cozumel follow jungle trails, coastal tracks and ranch roads across the island interior — a high-energy alternative to beach lounging for cruise passengers who want dust, speed and scenery. Tours include safety briefing, helmets and guide-led routes with cruise-timed returns.",
+            [
+                "2–3 hour riding time plus briefing and transfers.",
+                "Valid driver's licence typically required; minimum age limits apply.",
+                "Moderate to high activity — expect bumps, dust and heat.",
+                "Wear closed-toe shoes, sunglasses and clothes you do not mind getting dusty.",
+            ],
+            [
+                (ATV_IMG, ATV_ALT, "Jungle Trails", "Guided ATV routes through Cozumel's interior terrain."),
+                (JEEP_IMG, JEEP_ALT, "Coastal Views", "Open stretches with Caribbean vistas between forest sections."),
+                (ATV_IMG, ATV_ALT, "Safety Briefing", "Helmets, instruction and small-group guide ratios."),
+            ],
+            dict(best_for="Thrill seekers and active adults", activity_level="Moderate to high", family="Older teens only — check age policy", popular="ATV jungle trails, adventure parks"),
+            ATV_IMG, ATV_ALT,
+            badge="Best Adventure Tour",
+            extra_links=[("cozumel-jeep-tour.html", "Jeep Tour")],
+        ),
+        "cozumel-tequila-tasting-tour.html": content_tour_page(
+            "Tequila tasting tours on Cozumel blend agave education with island sightseeing — sample blanco, reposado and añejo expressions, learn production methods and often pair tastings with snorkel or beach time. Mayan Extreme Park's zip-and-sip and dedicated tasting excursions appeal to adults seeking culture with a festive twist.",
+            [
+                "3–5 hours depending on combo with snorkel or zip line.",
+                "Multiple tasting pours — eat beforehand and hydrate in tropical heat.",
+                "Easy to moderate; zip line combos require higher fitness.",
+                "Popular with couples and adult groups; check minimum ages.",
+            ],
+            [
+                (TEQUILA_IMG, TEQUILA_ALT, "Agave Education", "Learn tequila categories and traditional production."),
+                (TEQUILA_IMG, TEQUILA_ALT, "Guided Tastings", "Sample premium Mexican tequilas with expert commentary."),
+                (BEST_OF_IMG, BEST_OF_ALT, "Hacienda Setting", "Tastings at island haciendas and adventure parks."),
+            ],
+            dict(best_for="Adults and culture enthusiasts", activity_level="Easy to moderate", popular="Tequila tasting, zip-and-sip, culinary tours"),
+            TEQUILA_IMG, TEQUILA_ALT,
+            badge="Best for First-Time Visitors",
+            extra_links=[("best-of-cozumel.html", "Best of Cozumel")],
+        ),
+        "cozumel-private-island-tour.html": content_tour_page(
+            "Private island and secluded beach tours whisk cruise passengers away from crowded piers to quiet sandbars, hidden coves and exclusive beach clubs accessible only by boat. Small-group and private charters to El Cielo, Passion Island-style escapes and custom sandbar trips offer intimacy that large catamarans cannot match.",
+            [
+                "4–6 hours with private or small-group boat charters.",
+                "Custom pacing — swim, snorkel and relax on your schedule.",
+                "Higher per-person cost offset by privacy and flexibility.",
+                "Ideal for celebrations, honeymoons and multi-generational groups.",
+            ],
+            [
+                (PRIVATE_ISLAND_IMG, PRIVATE_ISLAND_ALT, "Secluded Beaches", "White sand and calm water away from cruise crowds."),
+                (CATAMARAN_IMG, CATAMARAN_ALT, "Private Boat Access", "Reach sandbars and coves only accessible by water."),
+                (SNORKEL_IMG, SNORKEL_ALT, "Snorkel On Demand", "Stop at reef patches when conditions allow."),
+            ],
+            dict(best_for="Groups wanting privacy and custom timing", activity_level="Easy to moderate", popular="Private catamaran, El Cielo charter, island escape"),
+            PRIVATE_ISLAND_IMG, PRIVATE_ISLAND_ALT,
+            badge="Best Private Option",
+            extra_links=[("cozumel-catamaran-sail-and-snorkel.html", "Catamaran Tours")],
+        ),
+        "cozumel-scuba-diving-tour.html": content_tour_page(
+            "Cozumel's wall dives and reef systems rank among the Caribbean's best — discover scuba programs and one-tank dives at Chankanaab let certified and beginner cruise passengers explore underwater without a multi-day certification course. Chankanaab's controlled environment suits introductory dives with direct instructor supervision.",
+            [
+                "3–4 hours for discover scuba; certified one-tank dives similar length.",
+                "Medical questionnaire required — disclose conditions honestly.",
+                "Moderate activity; basic fitness and comfort in water essential.",
+                "Afternoon dives possible if morning snorkel or beach tour completed.",
+            ],
+            [
+                (SCUBA_IMG, SCUBA_ALT, "Reef Diving", "Coral walls and tropical fish along Cozumel's marine park."),
+                (CHANKANAAB_IMG, CHANKANAAB_ALT, "Chankanaab Dive Site", "Controlled entry with park facilities and post-dive beach time."),
+                (SCUBA_IMG, SCUBA_ALT, "Discover Scuba", "Introductory dives for guests without certification."),
+            ],
+            dict(best_for="Certified divers and adventurous beginners", activity_level="Moderate — diving", popular="Discover scuba, one-tank Chankanaab dive"),
+            SCUBA_IMG, SCUBA_ALT,
+            badge="Best Snorkeling Tour",
+            extra_links=[("chankanaab-park-tour.html", "Chankanaab Park"), ("cozumel-snorkeling-tour.html", "Snorkeling")],
+        ),
+    }
