@@ -17,8 +17,8 @@ ACCENT = "text-pr-300"
 
 HOME_HERO = "images/hero-cozumel.png"
 HOME_HERO_ALT = (
-    "Turquoise Caribbean water along a Cozumel beach with a cruise ship visible "
-    "near the Cozumel Mexico cruise port"
+    "Cozumel Mexico beach signpost with colorful destination arrows and turquoise "
+    "Caribbean water along the white sand shoreline"
 )
 PORT_IMG = "images/cozumel-cruise-port.png"
 PORT_ALT = (
@@ -27,49 +27,54 @@ PORT_ALT = (
 )
 BEST_IMG = "images/best-cozumel-excursions.png"
 BEST_ALT = (
-    "Best Cozumel shore excursions for cruise passengers including snorkeling, "
-    "beach clubs and Mayan ruins tours"
+    "Cozumel Mexico beach signpost with turquoise Caribbean water representing "
+    "best shore excursions for cruise passengers"
 )
 ONE_DAY_IMG = "images/one-day-cozumel.png"
 ONE_DAY_ALT = (
-    "One day Cozumel cruise port itinerary with beach, snorkeling and downtown "
-    "shopping for cruise passengers"
+    "Cozumel Mexico beach signpost overlooking turquoise Caribbean water for "
+    "cruise passenger one-day port itineraries"
 )
 INTRO_IMG = "images/cozumel-intro.png"
 INTRO_ALT = (
-    "Cozumel Mexico overview for cruise passengers with reef snorkeling, "
-    "beach clubs and San Miguel downtown"
+    "Iconic Cozumel Mexico beach signpost with turquoise Caribbean water and "
+    "white sand for cruise passenger shore excursion planning"
 )
 BEACHES_IMG = "images/cozumel-beaches.png"
 BEACHES_ALT = (
-    "Cozumel beach club with clear turquoise water, loungers and palm trees "
-    "for cruise passenger beach day excursions"
+    "Sunny Cozumel Mexico beach with palm trees, wooden lounge chairs and "
+    "turquoise Caribbean water for cruise passenger beach days"
+)
+CRYSTAL_IMG = "images/cozumel-beach-crystal.png"
+CRYSTAL_ALT = (
+    "Crystal clear shallow turquoise water with white sandy seafloor in Cozumel "
+    "Mexico ideal for cruise passenger beach and snorkel excursions"
 )
 
 BEST_OF_IMG = "images/best-of-cozumel.png"
 BEST_OF_ALT = (
-    "Best of Cozumel shore excursion combining beaches, Mayan heritage and "
-    "downtown Cozumel for cruise passengers"
+    "Cozumel Mexico beach signpost on white sand with turquoise Caribbean water "
+    "on a best-of Cozumel cruise shore excursion"
 )
 BEACH_DAY_IMG = "images/cozumel-beach-day.png"
 BEACH_DAY_ALT = (
-    "Cruise passengers relaxing on a Cozumel beach day excursion with "
-    "crystal clear Caribbean water and loungers"
+    "Sunny white sand beach in Cozumel Mexico with palm trees, wooden lounge "
+    "chairs and turquoise Caribbean water on a cruise beach day excursion"
 )
 SNORKEL_IMG = "images/cozumel-snorkeling.png"
 SNORKEL_ALT = (
-    "Snorkelers exploring colorful coral reef and tropical fish in clear "
-    "Cozumel Mexico waters on a cruise shore excursion"
+    "Vibrant coral reef in Cozumel Mexico with yellow tropical fish, brain coral "
+    "and sunbeams through clear blue water on a cruise snorkel excursion"
 )
 CHANKANAAB_IMG = "images/chankanaab-park.png"
 CHANKANAAB_ALT = (
-    "Chankanaab National Marine Park lagoon and beach in Cozumel Mexico "
-    "popular with cruise passengers"
+    "Welcome to Chankanaab Park entrance booth with thatched palapa roof, "
+    "tropical palm trees and paved roadway for Cozumel Mexico cruise passengers"
 )
 MR_SANCHOS_IMG = "images/mr-sanchos.png"
 MR_SANCHOS_ALT = (
-    "Mr Sanchos Beach Club pool and loungers on the west coast of Cozumel "
-    "Mexico for cruise passenger beach days"
+    "Tropical beach club setting in Cozumel Mexico with palm trees, loungers and "
+    "turquoise Caribbean water for Mr Sanchos-style cruise beach days"
 )
 JEEP_IMG = "images/cozumel-jeep-tour.png"
 JEEP_ALT = (
@@ -83,8 +88,8 @@ RUINS_ALT = (
 )
 CATAMARAN_IMG = "images/cozumel-catamaran.png"
 CATAMARAN_ALT = (
-    "Catamaran sailing across turquoise Caribbean water off Cozumel Mexico "
-    "with snorkel excursion guests aboard"
+    "Crystal clear turquoise Caribbean water off Cozumel Mexico for catamaran "
+    "sail and snorkel cruise shore excursions"
 )
 ATV_IMG = "images/cozumel-atv.png"
 ATV_ALT = (
@@ -98,19 +103,19 @@ TEQUILA_ALT = (
 )
 PRIVATE_ISLAND_IMG = "images/cozumel-private-island.png"
 PRIVATE_ISLAND_ALT = (
-    "Private island beach escape near Cozumel Mexico with white sand and "
-    "turquoise water for cruise passengers"
+    "Crystal clear shallow turquoise water near Cozumel Mexico for private "
+    "island and sandbar cruise shore excursions"
 )
 SCUBA_IMG = "images/cozumel-scuba.png"
 SCUBA_ALT = (
-    "Scuba diver exploring coral reef underwater near Cozumel Mexico on a "
-    "cruise passenger diving excursion"
+    "Underwater coral reef dive site in Cozumel Mexico with tropical fish and "
+    "sunlit clear water on a cruise scuba excursion"
 )
 
 ALL_IMAGES = [
     HOME_HERO, PORT_IMG, BEST_IMG, ONE_DAY_IMG, INTRO_IMG, BEACHES_IMG,
-    BEST_OF_IMG, BEACH_DAY_IMG, SNORKEL_IMG, CHANKANAAB_IMG, MR_SANCHOS_IMG,
-    JEEP_IMG, RUINS_IMG, CATAMARAN_IMG, ATV_IMG, TEQUILA_IMG,
+    CRYSTAL_IMG, BEST_OF_IMG, BEACH_DAY_IMG, SNORKEL_IMG, CHANKANAAB_IMG,
+    MR_SANCHOS_IMG, JEEP_IMG, RUINS_IMG, CATAMARAN_IMG, ATV_IMG, TEQUILA_IMG,
     PRIVATE_ISLAND_IMG, SCUBA_IMG,
 ]
 

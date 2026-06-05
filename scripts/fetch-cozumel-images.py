@@ -9,27 +9,29 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 IMAGES = ROOT / "images"
 
-CUSTOM_IMAGES: frozenset[str] = frozenset()
+CUSTOM_IMAGES: frozenset[str] = frozenset({
+    "hero-cozumel.png",
+    "cozumel-intro.png",
+    "best-cozumel-excursions.png",
+    "one-day-cozumel.png",
+    "best-of-cozumel.png",
+    "cozumel-beaches.png",
+    "cozumel-beach-day.png",
+    "cozumel-beach-crystal.png",
+    "cozumel-snorkeling.png",
+    "cozumel-scuba.png",
+    "chankanaab-park.png",
+    "mr-sanchos.png",
+    "cozumel-catamaran.png",
+    "cozumel-private-island.png",
+})
 
 DOWNLOADS: list[tuple[str, str, int]] = [
-    ("hero-cozumel.png", "vYXrNeIpm3w", 1920),
     ("cozumel-cruise-port.png", "WOyBhxyB8KI", 1920),
-    ("best-cozumel-excursions.png", "vYXrNeIpm3w", 1920),
-    ("one-day-cozumel.png", "YZ8Jc6TiH2A", 1920),
-    ("cozumel-intro.png", "vYXrNeIpm3w", 1920),
-    ("cozumel-beaches.png", "WOyBhxyB8KI", 1920),
-    ("best-of-cozumel.png", "vYXrNeIpm3w", 1920),
-    ("cozumel-beach-day.png", "WOyBhxyB8KI", 1920),
-    ("cozumel-snorkeling.png", "Q0HR_nrDkB8", 1920),
-    ("chankanaab-park.png", "vYXrNeIpm3w", 1920),
-    ("mr-sanchos.png", "WOyBhxyB8KI", 1920),
     ("cozumel-jeep-tour.png", "bHavJvvmcAU", 1920),
     ("cozumel-mayan-ruins.png", "PsgyWVeJjOA", 1920),
-    ("cozumel-catamaran.png", "vYXrNeIpm3w", 1920),
     ("cozumel-atv.png", "bHavJvvmcAU", 1920),
     ("cozumel-tequila.png", "PsgyWVeJjOA", 1920),
-    ("cozumel-private-island.png", "WOyBhxyB8KI", 1920),
-    ("cozumel-scuba.png", "Q0HR_nrDkB8", 1920),
 ]
 
 
