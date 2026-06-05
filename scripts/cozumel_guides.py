@@ -269,7 +269,7 @@ def content_port_map() -> str:
     return f"""<section class="pt-8 pb-4 bg-white"><div class="max-w-7xl mx-auto px-4">
   <h2 class="text-2xl font-display font-bold text-center mb-6">Cozumel Cruise Port Map Overview</h2>
   <div class="info-image rounded-3xl aspect-[21/9] shadow-xl overflow-hidden mb-8 max-w-5xl mx-auto">
-    <img src="{PORT_IMG}" alt="Cozumel Mexico cruise port map showing Punta Langosta International Pier and Puerta Maya with distances to Chankanaab and San Miguel" width="1200" height="514" loading="lazy" decoding="async" />
+    <img src="{PORT_IMG}" alt="{PORT_ALT}" width="1200" height="514" loading="lazy" decoding="async" />
   </div>
   <div class="grid sm:grid-cols-2 gap-6 text-sm max-w-4xl mx-auto">
     <div class="bg-white rounded-2xl p-5 border border-pr-100"><strong class="text-gray-900">San Miguel Downtown</strong><p class="mt-2 text-gray-600">Walk from Punta Langosta — shops, restaurants, waterfront.</p></div>

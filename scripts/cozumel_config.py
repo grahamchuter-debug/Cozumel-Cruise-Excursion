@@ -22,8 +22,8 @@ HOME_HERO_ALT = (
 )
 PORT_IMG = "images/cozumel-cruise-port.png"
 PORT_ALT = (
-    "Cozumel Mexico cruise port with passenger ship docked at pier and "
-    "turquoise Caribbean water along the waterfront"
+    "Colorful Cozumel Mexico cruise port sign with Royal Caribbean ship docked "
+    "at the pier for cruise passenger shore excursions"
 )
 BEST_IMG = "images/best-cozumel-excursions.png"
 BEST_ALT = (
@@ -53,8 +53,8 @@ CRYSTAL_ALT = (
 
 BEST_OF_IMG = "images/best-of-cozumel.png"
 BEST_OF_ALT = (
-    "Cozumel Mexico beach signpost on white sand with turquoise Caribbean water "
-    "on a best-of Cozumel cruise shore excursion"
+    "Colorful Cozumel Mexico cruise port sign with Royal Caribbean ship docked "
+    "at the pier on a best-of Cozumel shore excursion for cruise passengers"
 )
 BEACH_DAY_IMG = "images/cozumel-beach-day.png"
 BEACH_DAY_ALT = (
@@ -63,8 +63,8 @@ BEACH_DAY_ALT = (
 )
 SNORKEL_IMG = "images/cozumel-snorkeling.png"
 SNORKEL_ALT = (
-    "Vibrant coral reef in Cozumel Mexico with yellow tropical fish, brain coral "
-    "and sunbeams through clear blue water on a cruise snorkel excursion"
+    "Cruise passengers snorkeling in crystal-clear Cozumel Mexico water surrounded "
+    "by a school of colorful tropical fish on a reef shore excursion"
 )
 CHANKANAAB_IMG = "images/chankanaab-park.png"
 CHANKANAAB_ALT = (
