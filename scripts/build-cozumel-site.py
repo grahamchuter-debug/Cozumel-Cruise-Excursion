@@ -546,18 +546,15 @@ def main() -> None:
 }
 """)
 
+    # Domain is already attached in Cloudflare; do not re-declare custom_domain
+    # (externally managed DNS returns error 100117 on deploy).
     write("wrangler.jsonc", """{
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "cozumel-cruise-excursion",
   "compatibility_date": "2026-06-05",
   "observability": { "enabled": true },
   "assets": { "directory": "." },
-  "routes": [
-    {
-      "pattern": "cozumelcruiseexcursion.com",
-      "custom_domain": true
-    }
-  ]
+  "workers_dev": true
 }
 """)
 

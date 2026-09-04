@@ -2,7 +2,7 @@
   "_comment": "GENERATED FROM CARIBBEAN AUTHORITY — DO NOT MANUALLY EDIT. Run npm run sync:schedules",
   "port": "cozumel",
   "portDisplayName": "Cozumel",
-  "syncedAt": "2026-09-04T13:18:10.447Z",
+  "syncedAt": "2026-09-04T13:23:22.979Z",
   "sourceFile": "../caribbean-shore-excursions/data/imported-schedules/cozumel.json",
   "source": "caribbean-shore-excursions imported schedules",
   "filter": "authority file cozumel.json (port-specific import)",

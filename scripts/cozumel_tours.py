@@ -167,7 +167,7 @@ def all_tour_content() -> dict[str, str]:
             ],
             [
                 (ATV_IMG, ATV_ALT, "Jungle Trails", "Guided ATV routes through Cozumel's interior terrain."),
-                (JEEP_IMG, JEEP_ALT, "Coastal Views", "Open stretches with Caribbean vistas between forest sections."),
+                (ATV_IMG, ATV_ALT, "Coastal stretches", "Some operators include open stretches between forest sections — confirm the route."),
                 (ATV_IMG, ATV_ALT, "Safety Briefing", "Helmets, instruction and small-group guide ratios."),
             ],
             dict(best_for="Thrill seekers and active adults", activity_level="Moderate to high", family="Older teens only — check age policy", popular="ATV jungle trails, adventure parks"),

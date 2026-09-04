@@ -314,7 +314,7 @@ def content_tour_page(
     {highlights}
     <section class="pb-8 bg-white"><div class="max-w-7xl mx-auto px-4">{snap}</div></section>
     <section class="pb-8 bg-white"><div class="max-w-3xl mx-auto px-4 text-sm text-gray-600">
-      <p class="mb-3">This is an editorial planning page, not a live booking checkout. Explore details, compare options, and ask an operator or our concierge (when email routing is live) about fit for your sailing.</p>
+      <p class="mb-3">This is an editorial planning page, not a live booking checkout. Explore details, compare options, and ask an operator or our concierge at hello@cozumelcruiseexcursion.com about fit for your sailing.</p>
     </div></section>
     <section class="pb-16 bg-white"><div class="max-w-3xl mx-auto px-4">{internal_links(extra_links)}</div></section>
     {concierge_panel()}"""
