@@ -1,125 +1,138 @@
 """Guide and home page content for Cozumel Cruise Excursion."""
 from cozumel_config import (
-    BEACHES_IMG, BEACHES_ALT, BEST_IMG, BEST_ALT, CHANKANAAB_IMG, CHANKANAAB_ALT,
+    BEACHES_IMG, BEACHES_ALT, CHANKANAAB_IMG, CHANKANAAB_ALT,
     INTRO_IMG, INTRO_ALT, MR_SANCHOS_IMG, MR_SANCHOS_ALT,
     PORT_ARRIVAL_ALT, PORT_ARRIVAL_IMG, PORT_IMG, PORT_ALT,
     SNORKEL_IMG, SNORKEL_ALT,
 )
 from cozumel_helpers import (
-    card_grid, comparison_section, internal_links, snapshot_default,
+    card_grid, comparison_section, concierge_panel, internal_links, snapshot_default,
 )
 
 
 def content_home() -> str:
     featured = card_grid([
-        (SNORKEL_IMG, SNORKEL_ALT, "Cozumel Snorkeling", "Palancar Reef, El Cielo sandbar and Colombia Reef with gear and guides.", "cozumel-snorkeling-tour.html", "Snorkeling"),
-        (CHANKANAAB_IMG, CHANKANAAB_ALT, "Chankanaab Park", "Reef snorkel, beach, dolphins and botanical gardens near the port.", "chankanaab-park-tour.html", "Chankanaab"),
-        (MR_SANCHOS_IMG, MR_SANCHOS_ALT, "Mr Sanchos Beach Club", "All-inclusive west-coast beach day with pool and open bar.", "mr-sanchos-beach-club.html", "Mr Sanchos"),
-        (SNORKEL_IMG, SNORKEL_ALT, "Catamaran Sail &amp; Snorkel", "Sailing, reef snorkel and El Cielo on a spacious catamaran.", "cozumel-catamaran-sail-and-snorkel.html", "Catamaran"),
-    ])
-    best_cards = card_grid([
-        (SNORKEL_IMG, SNORKEL_ALT, "Snorkeling Tour", "World-class reef sites on the Mesoamerican Barrier Reef.", "cozumel-snorkeling-tour.html", "Reef Tours"),
-        (BEACHES_IMG, BEACHES_ALT, "Beach Day", "Loungers, calm water and all-inclusive beach clubs.", "cozumel-beach-day.html", "Beach Day"),
-        (CHANKANAAB_IMG, CHANKANAAB_ALT, "Chankanaab Park", "One-stop snorkel, beach and family activities.", "chankanaab-park-tour.html", "Park Tour"),
-        (SNORKEL_IMG, SNORKEL_ALT, "Best of Cozumel", "Island highlights, culture and tequila in one tour.", "best-of-cozumel.html", "Best of Cozumel"),
+        (SNORKEL_IMG, SNORKEL_ALT, "Cozumel snorkelling", "Palancar, El Cielo and Columbia Reef boat days timed for cruise calls.", "cozumel-snorkeling-tour.html", "Explore snorkelling"),
+        (CHANKANAAB_IMG, CHANKANAAB_ALT, "Chankanaab Park", "House reef, beach and park facilities a short drive from the piers.", "chankanaab-park-tour.html", "Explore Chankanaab"),
+        (MR_SANCHOS_IMG, MR_SANCHOS_ALT, "Mr Sanchos beach club", "West-coast loungers and a slower port day when you want easy.", "mr-sanchos-beach-club.html", "Explore beach club"),
+        (SNORKEL_IMG, SNORKEL_ALT, "Catamaran sail &amp; snorkel", "Sailing plus reef stops when you want time on the water.", "cozumel-catamaran-sail-and-snorkel.html", "Explore catamaran"),
     ])
     snap = snapshot_default()
-    return f"""<section class="pt-8 pb-8 bg-white"><div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-  <div class="text-center mb-10">
-    <div class="section-label mx-auto">Best Excursions</div>
-    <h2 class="text-3xl sm:text-4xl font-display font-bold text-gray-900 mb-4">Best Cozumel Cruise Excursions</h2>
-    <p class="text-gray-600 text-sm max-w-2xl mx-auto">Ranked for cruise schedules — reef snorkeling, beach clubs, Chankanaab, jeep adventures and Mayan ruins across Cozumel, Mexico.</p>
-  </div>
-  {best_cards}
-  <p class="text-center mt-8"><a href="best-cozumel-shore-excursions.html" class="text-ocean-600 font-semibold text-sm">See full comparison →</a></p>
+    return f"""<section class="pt-8 pb-6 bg-white"><div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+  <p class="section-label mx-auto">Cruise passenger orientation</p>
+  <h2 class="text-2xl sm:text-3xl font-display font-bold text-gray-900 mb-3">You are arriving in Cozumel by ship</h2>
+  <p class="text-gray-600 text-sm sm:text-base leading-relaxed">Three cruise terminals serve the island. Your realistic choices are reef time, a beach club, island sightseeing, San Gervasio, or a longer mainland day via the Playa del Carmen ferry. Start with the kind of day you want, then check your ship date.</p>
 </div></section>
-<section class="pt-4 pb-8 bg-white"><div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"><div class="grid lg:grid-cols-2 gap-12 items-center">
+<section class="pb-10 bg-white"><div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+  <div class="decision-grid">
+    <div class="decision-card"><h3 class="font-display font-bold text-gray-900">Reef / snorkel</h3><p>Boat days toward Palancar, Columbia or El Cielo when water is the priority.</p><a href="cozumel-snorkeling-tour.html" class="text-ocean-600 font-semibold text-sm">Snorkelling →</a></div>
+    <div class="decision-card"><h3 class="font-display font-bold text-gray-900">Beach club</h3><p>Loungers and a calmer pace — compare Mr Sanchos, Chankanaab and other west-coast days.</p><a href="cozumel-beach-day.html" class="text-ocean-600 font-semibold text-sm">Beach day →</a></div>
+    <div class="decision-card"><h3 class="font-display font-bold text-gray-900">Mayan history</h3><p>San Gervasio on-island, or a more complex mainland ruins day if your call supports it.</p><a href="cozumel-mayan-ruins-tour.html" class="text-ocean-600 font-semibold text-sm">Ruins options →</a></div>
+    <div class="decision-card"><h3 class="font-display font-bold text-gray-900">Island vs mainland</h3><p>Stay put for flexibility, or ferry across knowing the day gets longer.</p><a href="cozumel-island-vs-mainland.html" class="text-ocean-600 font-semibold text-sm">Compare →</a></div>
+    <div class="decision-card"><h3 class="font-display font-bold text-gray-900">Easy / low-effort</h3><p>Downtown from Punta Langosta, a short beach taxi, or a park pass with simple logistics.</p><a href="can-you-explore-cozumel-without-an-excursion.html" class="text-ocean-600 font-semibold text-sm">Easy day ideas →</a></div>
+    <div class="decision-card"><h3 class="font-display font-bold text-gray-900">Find your ship</h3><p>Search Cozumel call dates for 2026 and 2027, then plan buffer around all aboard.</p><a href="ship-schedule/" class="text-ocean-600 font-semibold text-sm">Ship schedule →</a></div>
+  </div>
+</div></section>
+<section class="py-12 bg-sand-50"><div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  <div class="text-center mb-10">
+    <p class="section-label mx-auto">Excursion choices</p>
+    <h2 class="text-3xl font-display font-bold text-gray-900 mb-3">Major ways to spend the port day</h2>
+    <p class="text-gray-600 text-sm max-w-2xl mx-auto">Editorial guides for cruise timing — not a booking marketplace. Explore details, then decide what fits your call.</p>
+  </div>
+  {featured}
+  <p class="text-center mt-8"><a href="best-cozumel-shore-excursions.html" class="text-ocean-600 font-semibold text-sm">Full comparison →</a></p>
+</div></section>
+<section class="py-12 bg-white"><div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"><div class="grid lg:grid-cols-2 gap-12 items-center">
   <div>
-    <div class="inline-flex items-center gap-2 text-ocean-600 text-xs font-semibold tracking-widest uppercase mb-3"><div class="w-8 h-px bg-ocean-400"></div>Cozumel Cruise Port</div>
-    <h2 class="text-3xl sm:text-4xl font-display font-bold text-gray-900 mb-5">Why Cruise Passengers<br/><span class="text-ocean-600">Choose Cozumel</span></h2>
-    <p class="text-gray-600 leading-relaxed mb-5">Cozumel pairs world-class reef snorkeling with relaxed beach clubs and easy downtown shopping — Palancar Reef, El Cielo, Chankanaab and Mr Sanchos fit a typical <strong>6–10 hour</strong> port call. USD is widely accepted; Mexican pesos are the official currency.</p>
-    <a href="cozumel-port-guide.html" class="btn-ocean inline-flex items-center gap-2 text-white font-semibold px-7 py-3.5 rounded-full text-sm shadow-lg">Port Guide</a>
+    <p class="section-label">Terminals</p>
+    <h2 class="text-3xl font-display font-bold text-gray-900 mb-4">Puerta Maya, International Pier &amp; Punta Langosta</h2>
+    <p class="text-gray-600 leading-relaxed mb-4">Which pier you use changes downtown walking distance, taxi orientation and meeting logistics. Ship-to-terminal assignments can vary — check your cruise information rather than assuming a fixed berth.</p>
+    <a href="cozumel-port-guide.html" class="btn-ocean inline-flex items-center gap-2 text-white font-semibold px-7 py-3.5 rounded-full text-sm shadow-lg">Port guide</a>
   </div>
   <div class="info-image rounded-3xl aspect-[4/3] shadow-2xl overflow-hidden">
+    <img src="{PORT_ARRIVAL_IMG}" alt="{PORT_ARRIVAL_ALT}" width="800" height="600" loading="lazy" decoding="async" />
+  </div>
+</div></div></section>
+<section class="py-12 bg-sand-50"><div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"><div class="grid lg:grid-cols-2 gap-12 items-center">
+  <div class="card-media rounded-3xl overflow-hidden aspect-[4/3] shadow-lg order-2 lg:order-1">
     <img src="{INTRO_IMG}" alt="{INTRO_ALT}" width="800" height="600" loading="lazy" decoding="async" />
   </div>
-</div></div></section>
-<section class="py-16 bg-amber-50"><div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-  <div class="text-center mb-12"><h2 class="text-3xl font-display font-bold text-gray-900">Featured Excursions</h2>
-  <p class="text-gray-600 text-sm mt-3 max-w-xl mx-auto">Most-booked shore excursions for Cozumel cruise passengers.</p></div>
-  {featured}
-</div></section>
-<section class="pb-8 bg-white"><div class="max-w-7xl mx-auto px-4">{snap}</div></section>
-<section class="py-16 bg-sand-50"><div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-  <h2 class="text-3xl font-display font-bold text-gray-900 text-center mb-10">Top Things To Do in Cozumel</h2>
-  <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 text-sm">
-    <div class="bg-white rounded-3xl p-6 border border-pr-100"><h3 class="font-display font-bold text-lg mb-2">Reef Snorkeling</h3><p class="text-gray-600">Palancar, Colombia Reef and El Cielo sandbar — among the Caribbean's clearest water.</p></div>
-    <div class="bg-white rounded-3xl p-6 border border-pr-100"><h3 class="font-display font-bold text-lg mb-2">Chankanaab Park</h3><p class="text-gray-600">Marine park with house reef snorkel, beach and optional dolphin encounters.</p></div>
-    <div class="bg-white rounded-3xl p-6 border border-pr-100"><h3 class="font-display font-bold text-lg mb-2">Beach Club Day</h3><p class="text-gray-600">Mr Sanchos and west-coast clubs offer all-inclusive lounging 20 minutes from port.</p></div>
-    <div class="bg-white rounded-3xl p-6 border border-pr-100"><h3 class="font-display font-bold text-lg mb-2">San Gervasio Ruins</h3><p class="text-gray-600">Mayan archaeological site dedicated to goddess Ixchel in the island interior.</p></div>
-    <div class="bg-white rounded-3xl p-6 border border-pr-100"><h3 class="font-display font-bold text-lg mb-2">Downtown San Miguel</h3><p class="text-gray-600">Walkable from Punta Langosta pier — shops, cafés and waterfront malecón.</p></div>
-    <div class="bg-white rounded-3xl p-6 border border-pr-100"><h3 class="font-display font-bold text-lg mb-2">Jeep &amp; ATV Adventures</h3><p class="text-gray-600">Jungle trails, cenotes and reef snorkel combos for active port days.</p></div>
-  </div>
-</div></section>
-<section class="py-16 bg-white"><div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"><div class="grid lg:grid-cols-2 gap-12 items-center">
-  <div class="card-media rounded-3xl overflow-hidden aspect-[4/3] shadow-lg">
-    <img src="{BEACHES_IMG}" alt="{BEACHES_ALT}" width="600" height="450" loading="lazy" decoding="async" />
-  </div>
-  <div>
-    <h2 class="text-3xl font-display font-bold text-gray-900 mb-4">Best Beaches For Cruise Passengers</h2>
-    <p class="text-gray-600 leading-relaxed mb-4">Cozumel's west coast faces the protected Caribbean — calm water, soft sand and beach clubs with food, drinks and snorkel access. Mr Sanchos, Chankanaab and all-inclusive day passes are the top picks for cruise guests who want a hassle-free beach day.</p>
-    <p class="text-gray-600 leading-relaxed mb-5">East-coast beaches face open ocean with stronger surf — most cruise excursions stay on the leeward side. See our <a href="best-cozumel-beaches-for-cruise-passengers.html" class="text-ocean-600 font-medium">beach guide</a> for pier distances and taxi tips.</p>
-    <a href="mr-sanchos-beach-club.html" class="text-ocean-600 font-semibold text-sm">Mr Sanchos Beach Club →</a>
+  <div class="order-1 lg:order-2">
+    <p class="section-label">Ship planning</p>
+    <h2 class="text-3xl font-display font-bold text-gray-900 mb-4">Plan around your actual call</h2>
+    <p class="text-gray-600 leading-relaxed mb-4">Browse Cozumel arrivals by month, search your ship, then build a day that leaves a sensible return buffer. Schedules can change — treat times as planning aids.</p>
+    <a href="ship-schedule/" class="btn-ocean inline-flex items-center gap-2 text-white font-semibold px-7 py-3.5 rounded-full text-sm">Find your ship schedule</a>
   </div>
 </div></div></section>
-<section class="py-16 bg-sand-50"><div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"><div class="grid lg:grid-cols-2 gap-12 items-center">
+<section class="pb-4 bg-white"><div class="max-w-7xl mx-auto px-4">{snap}</div></section>
+<section class="py-12 bg-white"><div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"><div class="grid lg:grid-cols-2 gap-12 items-center">
   <div>
-    <h2 class="text-3xl font-display font-bold text-gray-900 mb-4">Snorkeling In Cozumel</h2>
-    <p class="text-gray-600 leading-relaxed mb-4">Cozumel, Mexico sits on the Mesoamerican Reef — cruise passengers snorkel dramatic coral walls at Palancar, shallow gardens at Colombia Reef and the famous El Cielo sandbar where starfish rest in gin-clear shallows.</p>
-    <p class="text-gray-600 leading-relaxed mb-5">Morning seas are typically calmer. Catamaran and boat tours include gear; reef-safe sunscreen protects the ecosystem. Certified divers can add a <a href="cozumel-scuba-diving-tour.html" class="text-ocean-600 font-medium">scuba dive</a> at Chankanaab.</p>
-    <a href="cozumel-snorkeling-tour.html" class="text-ocean-600 font-semibold text-sm">Snorkeling tours →</a>
+    <h2 class="text-3xl font-display font-bold text-gray-900 mb-4">Snorkelling on the Mesoamerican Reef</h2>
+    <p class="text-gray-600 leading-relaxed mb-4">Cozumel’s leeward reef is the island’s genuine differentiator. Conditions and sightings vary — go for the reef experience, not a wildlife guarantee. Morning departures are often calmer.</p>
+    <a href="cozumel-snorkeling-tour.html" class="text-ocean-600 font-semibold text-sm">Snorkelling guide →</a>
+    <span class="text-gray-300 mx-2">·</span>
+    <a href="cozumel-reef-vs-beach.html" class="text-ocean-600 font-semibold text-sm">Reef vs beach →</a>
   </div>
   <div class="card-media rounded-3xl overflow-hidden aspect-[4/3] shadow-lg">
     <img src="{SNORKEL_IMG}" alt="{SNORKEL_ALT}" width="600" height="450" loading="lazy" decoding="async" />
   </div>
 </div></div></section>
+<section class="py-12 bg-sand-50"><div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"><div class="grid lg:grid-cols-2 gap-12 items-center">
+  <div class="card-media rounded-3xl overflow-hidden aspect-[4/3] shadow-lg">
+    <img src="{BEACHES_IMG}" alt="{BEACHES_ALT}" width="600" height="450" loading="lazy" decoding="async" />
+  </div>
+  <div>
+    <h2 class="text-3xl font-display font-bold text-gray-900 mb-4">Beach clubs without the brochure gloss</h2>
+    <p class="text-gray-600 leading-relaxed mb-4">West-coast clubs suit passengers who want shade, swimming and a simple day. Inclusions and atmosphere differ — compare Mr Sanchos, Chankanaab and other beach days before you commit.</p>
+    <a href="best-cozumel-beaches-for-cruise-passengers.html" class="text-ocean-600 font-semibold text-sm">Beach guide →</a>
+  </div>
+</div></div></section>
 {comparison_section()}
+<section class="py-12 bg-white"><div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  <h2 class="text-2xl font-display font-bold text-gray-900 text-center mb-8">Useful guides</h2>
+  <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 text-sm">
+    <a href="one-day-in-cozumel-from-a-cruise-ship.html" class="decision-card hover:border-ocean-200"><h3 class="font-display font-bold">One day in Cozumel</h3><p>Paths for easy, reef, beach, culture and mainland-minded days.</p></a>
+    <a href="cozumel-island-vs-mainland.html" class="decision-card hover:border-ocean-200"><h3 class="font-display font-bold">Island vs mainland</h3><p>Ferry and buffer trade-offs without scare language.</p></a>
+    <a href="methodology.html" class="decision-card hover:border-ocean-200"><h3 class="font-display font-bold">How we assess options</h3><p>Cruise timing, honest claims and schedule integrity.</p></a>
+  </div>
+</div></section>
 {home_faq_section()}
-<section class="py-16 cta-gradient"><div class="max-w-3xl mx-auto px-4 text-center">
-  <h2 class="text-3xl font-display font-bold text-white mb-4">Plan Your Cozumel Port Day</h2>
-  <p class="text-white/85 text-sm mb-6">Compare excursions, read the port guide and build your itinerary before you dock in Cozumel, Mexico.</p>
+{concierge_panel()}
+<section class="py-14 cta-gradient"><div class="max-w-3xl mx-auto px-4 text-center">
+  <h2 class="text-3xl font-display font-bold text-white mb-4">Ready to shape your Cozumel day?</h2>
+  <p class="text-white/85 text-sm mb-6">Compare excursions, check terminals, then look up your ship.</p>
   <div class="flex flex-col sm:flex-row gap-4 justify-center">
-    <a href="best-cozumel-shore-excursions.html" class="btn-primary inline-flex items-center justify-center text-white font-semibold px-8 py-4 rounded-full">Compare Excursions</a>
-    <a href="cozumel-port-guide.html" class="btn-outline inline-flex items-center justify-center text-white font-semibold px-8 py-4 rounded-full">Port Guide</a>
+    <a href="best-cozumel-shore-excursions.html" class="btn-primary inline-flex items-center justify-center text-white font-semibold px-8 py-4 rounded-full">Explore shore excursions</a>
+    <a href="ship-schedule/" class="btn-outline inline-flex items-center justify-center text-white font-semibold px-8 py-4 rounded-full">Find your ship schedule</a>
   </div>
 </div></section>"""
 
 
 def home_faq_section() -> str:
     return """<section class="py-16 bg-white"><div class="max-w-3xl mx-auto px-4">
-  <h2 class="text-3xl font-display font-bold text-gray-900 text-center mb-8">Cozumel Shore Excursions FAQ</h2>
+  <h2 class="text-3xl font-display font-bold text-gray-900 text-center mb-8">Cozumel shore excursions FAQ</h2>
   <div class="space-y-4">
     <details class="faq-item rounded-2xl border border-pr-100 p-5"><summary class="font-semibold text-gray-900 cursor-pointer">How long do cruise ships stay in Cozumel?</summary>
-      <p class="mt-4 text-sm text-gray-500">Most Cozumel port calls are 6 to 10 hours. A half-day snorkel or beach club fits comfortably; full-day catamaran trips need a longer call with return buffer.</p></details>
-    <details class="faq-item rounded-2xl border border-pr-100 p-5"><summary class="font-semibold text-gray-900 cursor-pointer">Which Cozumel cruise pier will my ship use?</summary>
-      <p class="mt-4 text-sm text-gray-500">Ships dock at Punta Langosta (downtown), International Pier or Puerta Maya (south). Your cruise line assigns the pier — check your itinerary and our <a href="cozumel-port-guide.html" class="text-ocean-600">port guide</a>.</p></details>
-    <details class="faq-item rounded-2xl border border-pr-100 p-5"><summary class="font-semibold text-gray-900 cursor-pointer">What currency is used in Cozumel?</summary>
-      <p class="mt-4 text-sm text-gray-500">Mexican pesos (MXN) are official. USD is widely accepted in tourist areas — carry small bills for taxis and tips.</p></details>
-    <details class="faq-item rounded-2xl border border-pr-100 p-5"><summary class="font-semibold text-gray-900 cursor-pointer">Beach day or snorkeling for a Cozumel port day?</summary>
-      <p class="mt-4 text-sm text-gray-500">Snorkeling for reef lovers; beach clubs like Mr Sanchos for relaxed lounging. Chankanaab combines both. First-timers often choose Best of Cozumel or Chankanaab.</p></details>
-    <details class="faq-item rounded-2xl border border-pr-100 p-5"><summary class="font-semibold text-gray-900 cursor-pointer">Ship excursion or book independently in Cozumel?</summary>
-      <p class="mt-4 text-sm text-gray-500">Ship tours guarantee the vessel waits if the operator is late. Reputable Cozumel operators plan returns with buffer — confirm policies before booking ashore.</p></details>
+      <p class="mt-4 text-sm text-gray-500">Many Cozumel calls last roughly 6 to 10 hours, but your ship’s timetable is what matters. Check arrival, departure and all-aboard on your cruise documents, then leave a return buffer.</p></details>
+    <details class="faq-item rounded-2xl border border-pr-100 p-5"><summary class="font-semibold text-gray-900 cursor-pointer">Which Cozumel cruise terminal will I use?</summary>
+      <p class="mt-4 text-sm text-gray-500">Ships use Puerta Maya, International Pier or Punta Langosta. Assignments can change — confirm with your cruise line. See the <a href="cozumel-port-guide.html" class="text-ocean-600">port guide</a> for how each pier affects downtown and transfers.</p></details>
+    <details class="faq-item rounded-2xl border border-pr-100 p-5"><summary class="font-semibold text-gray-900 cursor-pointer">Should I stay on Cozumel or go to the mainland?</summary>
+      <p class="mt-4 text-sm text-gray-500">Island days are usually more flexible. Mainland days via the Playa del Carmen ferry unlock larger ruins and Riviera Maya scenery but consume more of the call. Read <a href="cozumel-island-vs-mainland.html" class="text-ocean-600">island vs mainland</a>.</p></details>
+    <details class="faq-item rounded-2xl border border-pr-100 p-5"><summary class="font-semibold text-gray-900 cursor-pointer">Beach day or snorkelling?</summary>
+      <p class="mt-4 text-sm text-gray-500">Choose snorkelling for reef structure and boat time; choose a beach club for lounging and a slower pace. Chankanaab combines park facilities with a house reef. Compare in <a href="cozumel-reef-vs-beach.html" class="text-ocean-600">reef vs beach</a>.</p></details>
+    <details class="faq-item rounded-2xl border border-pr-100 p-5"><summary class="font-semibold text-gray-900 cursor-pointer">Ship excursion or independent operator?</summary>
+      <p class="mt-4 text-sm text-gray-500">Ship tours often include the cruise line’s return policies. Independent operators can be excellent when they plan buffer and communicate meeting points clearly — verify policies before you book. This site does not sell tickets.</p></details>
   </div>
 </div></section>"""
 
 
 def home_faq_data() -> list[tuple[str, str]]:
     return [
-        ("How long do cruise ships stay in Cozumel?", "Most Cozumel port calls are 6 to 10 hours."),
-        ("Which Cozumel cruise pier will my ship use?", "Punta Langosta, International Pier or Puerta Maya — check your cruise itinerary."),
-        ("What currency is used in Cozumel?", "Mexican pesos official; USD widely accepted in tourist areas."),
-        ("Beach day or snorkeling for a Cozumel port day?", "Snorkeling for reefs; beach clubs for relaxing; Chankanaab combines both."),
-        ("Ship excursion or book independently in Cozumel?", "Ship tours guarantee wait-if-late; reputable locals plan buffer returns."),
+        ("How long do cruise ships stay in Cozumel?", "Many Cozumel calls last roughly 6 to 10 hours; confirm your ship’s timetable and leave a return buffer."),
+        ("Which Cozumel cruise terminal will I use?", "Puerta Maya, International Pier or Punta Langosta — assignments can change; check your cruise information."),
+        ("Should I stay on Cozumel or go to the mainland?", "Island days are more flexible; mainland days via ferry take more of the call and need careful buffering."),
+        ("Beach day or snorkelling?", "Snorkelling for reef time; beach clubs for a slower day; Chankanaab combines park and house reef."),
+        ("Ship excursion or independent operator?", "Compare return policies and meeting logistics; this site is a planning guide, not a ticket seller."),
     ]
 
 
@@ -129,7 +142,7 @@ def content_best_excursions() -> str:
   <h2 class="text-2xl font-display font-bold text-center mb-8">Excursions by Traveler Type</h2>
   <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 text-sm">
     <div class="bg-sand-50 rounded-3xl p-6 border border-pr-100"><h3 class="font-display font-bold text-lg mb-2">Families</h3><p class="text-gray-600 mb-3">Chankanaab Park, beach day passes and gentle snorkel catamarans suit mixed ages.</p><a href="chankanaab-park-tour.html" class="text-ocean-600 font-semibold">Chankanaab →</a></div>
-    <div class="bg-sand-50 rounded-3xl p-6 border border-pr-100"><h3 class="font-display font-bold text-lg mb-2">Couples</h3><p class="text-gray-600 mb-3">Mr Sanchos all-inclusive, private catamaran and tequila tasting tours.</p><a href="mr-sanchos-beach-club.html" class="text-ocean-600 font-semibold">Mr Sanchos →</a></div>
+    <div class="bg-sand-50 rounded-3xl p-6 border border-pr-100"><h3 class="font-display font-bold text-lg mb-2">Couples</h3><p class="text-gray-600 mb-3">Beach-club days, private catamaran charters and tequila tasting outings.</p><a href="mr-sanchos-beach-club.html" class="text-ocean-600 font-semibold">Mr Sanchos →</a></div>
     <div class="bg-sand-50 rounded-3xl p-6 border border-pr-100"><h3 class="font-display font-bold text-lg mb-2">First Timers</h3><p class="text-gray-600 mb-3">Best of Cozumel and Chankanaab cover island highlights in one trip.</p><a href="best-of-cozumel.html" class="text-ocean-600 font-semibold">Best of Cozumel →</a></div>
     <div class="bg-ocean-50 rounded-3xl p-6 border border-ocean-100"><h3 class="font-display font-bold text-lg mb-2">Adventure</h3><p class="text-gray-600 mb-3">Jeep jungle tours, ATV trails and cenote snorkel combos.</p><a href="cozumel-jeep-tour.html" class="text-ocean-600 font-semibold">Jeep Tour →</a></div>
     <div class="bg-ocean-50 rounded-3xl p-6 border border-ocean-100"><h3 class="font-display font-bold text-lg mb-2">Reef Lovers</h3><p class="text-gray-600 mb-3">Snorkel El Cielo, Palancar Reef and scuba dives at Chankanaab.</p><a href="cozumel-snorkeling-tour.html" class="text-ocean-600 font-semibold">Snorkeling →</a></div>
@@ -159,60 +172,64 @@ def content_best_excursions() -> str:
 def content_port_guide() -> str:
     snap = snapshot_default(activity_level="Low at terminal; moderate on tours", popular="Taxis, tour pickups, downtown walk")
     return f"""<section class="pt-8 pb-4 bg-white"><div class="max-w-3xl mx-auto px-4 text-center">
-  <p class="text-gray-600 leading-relaxed text-sm">Ships dock at <strong>Cozumel cruise port</strong> piers with reef snorkeling, beach clubs and San Miguel downtown on a typical <strong>6–10 hour</strong> call in Quintana Roo, Mexico.</p>
+  <p class="text-gray-600 leading-relaxed text-sm">Cozumel’s cruise piers put reef, beach clubs and San Miguel within reach of a typical call — if you match the day to your terminal and all-aboard time.</p>
 </div></section>
 <section class="pb-8 bg-white"><div class="max-w-7xl mx-auto px-4">{snap}</div></section>
 <section class="py-12 bg-sand-50"><div class="max-w-7xl mx-auto px-4">
-  <h2 class="text-2xl font-display font-bold text-center mb-8">Where Ships Arrive</h2>
+  <h2 class="text-2xl font-display font-bold text-center mb-3">The three cruise terminals</h2>
+  <p class="text-center text-sm text-gray-600 max-w-2xl mx-auto mb-8">Terminal location changes downtown access, taxi plazas and meeting logistics. Do not treat ship-to-pier pairings as permanent; confirm on your cruise documents.</p>
   <div class="info-image rounded-3xl aspect-[21/9] shadow-xl overflow-hidden mb-8 max-w-5xl mx-auto">
     <img src="{PORT_ARRIVAL_IMG}" alt="{PORT_ARRIVAL_ALT}" width="1200" height="514" loading="lazy" decoding="async" />
   </div>
   <div class="grid lg:grid-cols-3 gap-6 text-sm">
-    <div class="bg-white rounded-3xl p-6 border border-pr-100"><h3 class="font-display font-bold text-lg mb-2">Punta Langosta</h3><p class="text-gray-600">Downtown pier — walk to San Miguel shops, waterfront malecón and cafés in minutes. Taxis to south-side attractions.</p></div>
-    <div class="bg-white rounded-3xl p-6 border border-pr-100"><h3 class="font-display font-bold text-lg mb-2">International Pier</h3><p class="text-gray-600">South of downtown — tour pickups at terminal. 10–15 minute taxi to San Miguel; 15–20 minutes to Chankanaab.</p></div>
-    <div class="bg-white rounded-3xl p-6 border border-pr-100"><h3 class="font-display font-bold text-lg mb-2">Puerta Maya</h3><p class="text-gray-600">Carnival Corporation pier south of town — organised excursions meet inside terminal. Taxi plaza outside for independent trips.</p></div>
+    <div class="bg-white rounded-3xl p-6 border border-pr-100"><h3 class="font-display font-bold text-lg mb-2">Punta Langosta</h3><p class="text-gray-600 mb-3">Closest to downtown San Miguel — shops, malecón and cafés are walkable for many passengers. Handy for an easy, low-transfer day.</p><p class="text-gray-500 text-xs">South-side parks and beach clubs still need a taxi or organised transfer.</p></div>
+    <div class="bg-white rounded-3xl p-6 border border-pr-100"><h3 class="font-display font-bold text-lg mb-2">International Pier</h3><p class="text-gray-600 mb-3">South of downtown. Tour desks and taxi plazas serve the terminal. Downtown is a short taxi rather than a casual stroll for most guests.</p><p class="text-gray-500 text-xs">Convenient orientation for many organised west-coast and park transfers.</p></div>
+    <div class="bg-white rounded-3xl p-6 border border-pr-100"><h3 class="font-display font-bold text-lg mb-2">Puerta Maya</h3><p class="text-gray-600 mb-3">Large southern complex used by many ships. Organised excursions commonly meet inside the terminal; independent guests use the taxi plaza outside.</p><p class="text-gray-500 text-xs">Plan meeting points carefully — the complex is bigger than a single downtown pier.</p></div>
   </div>
 </div></section>
 <section class="py-12 bg-white"><div class="max-w-7xl mx-auto px-4">
-  <h2 class="text-2xl font-display font-bold text-center mb-8">Practical Port Day Info</h2>
-  <div class="grid sm:grid-cols-3 gap-6 text-sm">
-    <div class="bg-sand-50 rounded-2xl p-6"><strong class="text-gray-900">Currency</strong><p class="mt-2 text-gray-600">Mexican pesos (MXN) official. <strong>USD</strong> accepted at tourist businesses — carry small bills for taxis.</p></div>
-    <div class="bg-ocean-50 rounded-2xl p-6"><strong class="text-gray-900">Taxis</strong><p class="mt-2 text-gray-600">Official taxis at all piers — agree fare before departing. No rideshare; fixed-route vans serve popular beaches.</p></div>
-    <div class="bg-sand-50 rounded-2xl p-6"><strong class="text-gray-900">Return Timing</strong><p class="mt-2 text-gray-600">Allow 60–90 minutes before all aboard. Organised tours build buffer; independent guests track ship time carefully.</p></div>
-    <div class="bg-ocean-50 rounded-2xl p-6"><strong class="text-gray-900">Safety</strong><p class="mt-2 text-gray-600">Cozumel is heavily touristed. See our <a href="is-cozumel-safe-for-cruise-passengers.html" class="text-ocean-600 font-medium">safety guide</a> for practical tips.</p></div>
-    <div class="bg-sand-50 rounded-2xl p-6"><strong class="text-gray-900">Weather &amp; Seas</strong><p class="mt-2 text-gray-600">Tropical year-round. Rainy season June–October. Morning snorkel seas are typically calmer on the west coast.</p></div>
-    <div class="bg-ocean-50 rounded-2xl p-6"><strong class="text-gray-900">Distances</strong><p class="mt-2 text-gray-600">Chankanaab 15–20 min south. Mr Sanchos ~20 min. San Gervasio ruins ~45 min across island.</p></div>
+  <h2 class="text-2xl font-display font-bold text-center mb-8">Practical port-day notes</h2>
+  <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 text-sm">
+    <div class="bg-sand-50 rounded-2xl p-6"><strong class="text-gray-900">Currency</strong><p class="mt-2 text-gray-600">Mexican pesos (MXN) are official. USD is widely accepted in tourist areas — small notes help for taxis and tips. We do not publish fixed fare tables.</p></div>
+    <div class="bg-ocean-50 rounded-2xl p-6"><strong class="text-gray-900">Transport</strong><p class="mt-2 text-gray-600">Official taxis operate at the piers. Agree the fare or route before you leave. Rideshare is not the local default for most cruise guests.</p></div>
+    <div class="bg-sand-50 rounded-2xl p-6"><strong class="text-gray-900">Return planning</strong><p class="mt-2 text-gray-600">Build your own buffer before all aboard. Organised tours should communicate return timing; independent days need tighter self-management.</p></div>
+    <div class="bg-ocean-50 rounded-2xl p-6"><strong class="text-gray-900">Independent vs organised</strong><p class="mt-2 text-gray-600">Downtown walking and a simple beach taxi can work alone. Reef boats, El Cielo and many ruins days are simpler with an operator who owns the logistics.</p></div>
+    <div class="bg-sand-50 rounded-2xl p-6"><strong class="text-gray-900">Ferry / mainland</strong><p class="mt-2 text-gray-600">Crossing to Playa del Carmen adds ferry and road time. See <a href="cozumel-island-vs-mainland.html" class="text-ocean-600 font-medium">island vs mainland</a> before committing.</p></div>
+    <div class="bg-ocean-50 rounded-2xl p-6"><strong class="text-gray-900">Heat &amp; mobility</strong><p class="mt-2 text-gray-600">Expect strong sun. Prefer shaded beach or park days if mobility is limited; confirm walking surfaces for ruins and adventure tours.</p></div>
   </div>
-  <p class="text-center mt-8"><a href="cozumel-cruise-port-map.html" class="text-ocean-600 font-semibold text-sm">Port map →</a> · <a href="one-day-in-cozumel-from-a-cruise-ship.html" class="text-ocean-600 font-semibold text-sm">One-day itinerary →</a></p>
+  <p class="text-center mt-8 text-sm"><a href="cozumel-cruise-port-map.html" class="text-ocean-600 font-semibold">Port map →</a> · <a href="ship-schedule/" class="text-ocean-600 font-semibold">Ship schedule →</a> · <a href="one-day-in-cozumel-from-a-cruise-ship.html" class="text-ocean-600 font-semibold">One-day itinerary →</a></p>
   <div class="mt-10 max-w-3xl mx-auto">{internal_links()}</div>
-</div></section>"""
+</div></section>
+{concierge_panel()}"""
 
 
 def content_one_day() -> str:
-    snap = snapshot_default(best_for="Morning snorkel + afternoon beach or downtown")
+    snap = snapshot_default(best_for="Matching a day path to your call length")
     return f"""<section class="pt-8 pb-4 bg-white"><div class="max-w-3xl mx-auto px-4 text-center">
-  <p class="text-gray-600 text-sm">Sample timeline for a <strong>6–10 hour</strong> Cozumel call. Adjust for your ship's actual times.</p>
+  <p class="text-gray-600 text-sm">Use these as planning sketches, not rigid clocks. Anchor everything to your ship’s arrival, departure and all-aboard time.</p>
 </div></section>
 <section class="pb-8 bg-white"><div class="max-w-7xl mx-auto px-4">{snap}</div></section>
-<section class="py-12 bg-sand-50"><div class="max-w-3xl mx-auto px-4">
-  <h2 class="text-2xl font-display font-bold text-center mb-8">Classic Cozumel Port Day</h2>
-  <ol class="space-y-4 text-sm">
-    <li class="flex gap-4 bg-white rounded-2xl p-5 border border-pr-100"><span class="font-bold text-ocean-600 shrink-0">08:00</span><div><strong>Depart pier</strong><p class="text-gray-600 mt-1">Meet snorkel catamaran or transfer to Chankanaab — morning reef visibility is best.</p></div></li>
-    <li class="flex gap-4 bg-white rounded-2xl p-5 border border-pr-100"><span class="font-bold text-ocean-600 shrink-0">09:30</span><div><strong>El Cielo or Chankanaab snorkel</strong><p class="text-gray-600 mt-1">Reef sites with guide; float in crystal shallows at El Cielo sandbar.</p></div></li>
-    <li class="flex gap-4 bg-white rounded-2xl p-5 border border-pr-100"><span class="font-bold text-ocean-600 shrink-0">12:00</span><div><strong>Lunch &amp; beach</strong><p class="text-gray-600 mt-1">Beach club buffet or tacos at Kuza — relax before afternoon heat peaks.</p></div></li>
-    <li class="flex gap-4 bg-white rounded-2xl p-5 border border-pr-100"><span class="font-bold text-ocean-600 shrink-0">14:00</span><div><strong>Downtown or second activity</strong><p class="text-gray-600 mt-1">Shopping in San Miguel from Punta Langosta pier, or extend beach time at Mr Sanchos.</p></div></li>
-    <li class="flex gap-4 bg-white rounded-2xl p-5 border border-pr-100"><span class="font-bold text-ocean-600 shrink-0">16:30</span><div><strong>Return toward ship</strong><p class="text-gray-600 mt-1">Taxi or tour transfer to your pier — allow margin before all aboard.</p></div></li>
-  </ol>
-  <div class="mt-8 bg-white rounded-2xl p-6 border border-pr-100">
-    <h3 class="font-display font-bold text-lg mb-3">Suggested Excursions</h3>
-    <ul class="space-y-2 text-sm text-gray-600">
-      <li><a href="cozumel-snorkeling-tour.html" class="text-ocean-600 font-medium">Snorkeling Tour</a> — best single water excursion</li>
-      <li><a href="chankanaab-park-tour.html" class="text-ocean-600 font-medium">Chankanaab Park</a> — snorkel and beach in one stop</li>
-      <li><a href="best-of-cozumel.html" class="text-ocean-600 font-medium">Best of Cozumel</a> — culture and highlights for first-timers</li>
-    </ul>
+<section class="py-12 bg-sand-50"><div class="max-w-5xl mx-auto px-4">
+  <h2 class="text-2xl font-display font-bold text-center mb-8">Port-day paths</h2>
+  <div class="decision-grid mb-10">
+    <div class="decision-card"><h3 class="font-display font-bold">Easy day</h3><p>Downtown from Punta Langosta, or a short taxi to a beach club with a clear return plan.</p><a href="can-you-explore-cozumel-without-an-excursion.html" class="text-ocean-600 font-semibold text-sm">Independent ideas →</a></div>
+    <div class="decision-card"><h3 class="font-display font-bold">Beach / water day</h3><p>West-coast club or Chankanaab when you want swimming, shade and fewer moving parts.</p><a href="cozumel-beach-day.html" class="text-ocean-600 font-semibold text-sm">Beach day →</a></div>
+    <div class="decision-card"><h3 class="font-display font-bold">Active reef day</h3><p>Boat snorkel or catamaran toward Palancar, Columbia or El Cielo — leave buffer for seas and queues.</p><a href="cozumel-snorkeling-tour.html" class="text-ocean-600 font-semibold text-sm">Snorkelling →</a></div>
+    <div class="decision-card"><h3 class="font-display font-bold">History / culture</h3><p>San Gervasio or a Best of Cozumel style mix without a ferry crossing.</p><a href="cozumel-mayan-ruins-tour.html" class="text-ocean-600 font-semibold text-sm">Ruins →</a></div>
+    <div class="decision-card"><h3 class="font-display font-bold">Mainland full-day</h3><p>Only when the call truly supports ferry + road time. Read the trade-offs first.</p><a href="cozumel-island-vs-mainland.html" class="text-ocean-600 font-semibold text-sm">Island vs mainland →</a></div>
+    <div class="decision-card"><h3 class="font-display font-bold">Family mix</h3><p>Chankanaab or a gentle beach club often beats a packed multi-stop adventure.</p><a href="chankanaab-park-tour.html" class="text-ocean-600 font-semibold text-sm">Chankanaab →</a></div>
   </div>
-  <div class="mt-10">{internal_links()}</div>
-</div></section>"""
+  <h2 class="text-xl font-display font-bold text-center mb-6">Sample island reef + beach sketch</h2>
+  <ol class="space-y-4 text-sm max-w-3xl mx-auto">
+    <li class="flex gap-4 bg-white rounded-2xl p-5 border border-pr-100"><span class="font-bold text-ocean-600 shrink-0">Morning</span><div><strong>Leave the pier with purpose</strong><p class="text-gray-600 mt-1">Meet a snorkel boat or transfer to Chankanaab while energy and light are good.</p></div></li>
+    <li class="flex gap-4 bg-white rounded-2xl p-5 border border-pr-100"><span class="font-bold text-ocean-600 shrink-0">Midday</span><div><strong>Water time, then shade</strong><p class="text-gray-600 mt-1">Reef stop or park snorkel, then lunch and a pause before heat peaks.</p></div></li>
+    <li class="flex gap-4 bg-white rounded-2xl p-5 border border-pr-100"><span class="font-bold text-ocean-600 shrink-0">Afternoon</span><div><strong>Second activity or downtown</strong><p class="text-gray-600 mt-1">Extend beach time, or shop near Punta Langosta if that is your terminal.</p></div></li>
+    <li class="flex gap-4 bg-white rounded-2xl p-5 border border-pr-100"><span class="font-bold text-ocean-600 shrink-0">Return</span><div><strong>Move early enough</strong><p class="text-gray-600 mt-1">Taxi or tour transfer with margin. Confirm your pier — Puerta Maya, International or Punta Langosta.</p></div></li>
+  </ol>
+  <p class="text-center mt-8 text-sm"><a href="ship-schedule/" class="text-ocean-600 font-semibold">Check your ship date →</a></p>
+  <div class="mt-10 max-w-3xl mx-auto">{internal_links()}</div>
+</div></section>
+{concierge_panel()}"""
 
 
 def content_beaches_guide() -> str:
@@ -221,8 +238,8 @@ def content_beaches_guide() -> str:
   <div>
     <p class="text-gray-600 leading-relaxed mb-6">Cozumel's cruise-friendly beaches sit on the protected west coast — calm turquoise water, soft sand and clubs with loungers, food and open bars. East-coast beaches face open ocean with stronger surf and are rarely included on shore excursions.</p>
     <ul class="space-y-3 mb-6 text-sm text-gray-600">
-      <li class="flex gap-2"><span class="text-ocean-500">✓</span><strong>Mr Sanchos</strong> — all-inclusive favourite, ~20 min from port. <a href="mr-sanchos-cozumel-guide.html" class="text-ocean-600">Guide →</a></li>
-      <li class="flex gap-2"><span class="text-ocean-500">✓</span><strong>Chankanaab</strong> — park with reef snorkel and beach, 15–20 min south.</li>
+      <li class="flex gap-2"><span class="text-ocean-500">✓</span><strong>Mr Sanchos</strong> — popular beach-club style day; transfer time depends on pier and traffic. <a href="mr-sanchos-cozumel-guide.html" class="text-ocean-600">Guide →</a></li>
+      <li class="flex gap-2"><span class="text-ocean-500">✓</span><strong>Chankanaab</strong> — park with house reef and beach a short drive south for many ships.</li>
       <li class="flex gap-2"><span class="text-ocean-500">✓</span><strong>Money Bar / Dzul-Ha</strong> — reef snorkel from shore with day pass.</li>
       <li class="flex gap-2"><span class="text-ocean-500">✓</span><strong>Kuza Beach Park</strong> — often paired with El Cielo snorkel catamarans.</li>
     </ul>
@@ -274,9 +291,9 @@ def content_port_map() -> str:
   </div>
   <div class="grid sm:grid-cols-2 gap-6 text-sm max-w-4xl mx-auto">
     <div class="bg-white rounded-2xl p-5 border border-pr-100"><strong class="text-gray-900">San Miguel Downtown</strong><p class="mt-2 text-gray-600">Walk from Punta Langosta — shops, restaurants, waterfront.</p></div>
-    <div class="bg-white rounded-2xl p-5 border border-pr-100"><strong class="text-gray-900">Chankanaab Park</strong><p class="mt-2 text-gray-600">~8 km / 15–20 min south of downtown piers.</p></div>
-    <div class="bg-white rounded-2xl p-5 border border-pr-100"><strong class="text-gray-900">Mr Sanchos</strong><p class="mt-2 text-gray-600">~10 km / ~20 min west-coast road from port area.</p></div>
-    <div class="bg-white rounded-2xl p-5 border border-pr-100"><strong class="text-gray-900">San Gervasio Ruins</strong><p class="mt-2 text-gray-600">~20 km / ~45 min across island interior.</p></div>
+    <div class="bg-white rounded-2xl p-5 border border-pr-100"><strong class="text-gray-900">Chankanaab Park</strong><p class="mt-2 text-gray-600">A short drive south of the downtown pier area for many ships — allow for traffic.</p></div>
+    <div class="bg-white rounded-2xl p-5 border border-pr-100"><strong class="text-gray-900">Mr Sanchos area</strong><p class="mt-2 text-gray-600">West-coast road from the port zone; journey time depends on pier and traffic.</p></div>
+    <div class="bg-white rounded-2xl p-5 border border-pr-100"><strong class="text-gray-900">San Gervasio Ruins</strong><p class="mt-2 text-gray-600">Across the island interior — plan a longer transfer than a beach club hop.</p></div>
     <div class="bg-white rounded-2xl p-5 border border-pr-100"><strong class="text-gray-900">Palancar Reef</strong><p class="mt-2 text-gray-600">Southwest coast — boat access from marina zones.</p></div>
     <div class="bg-white rounded-2xl p-5 border border-pr-100"><strong class="text-gray-900">El Cielo Sandbar</strong><p class="mt-2 text-gray-600">Off southwest coast — reachable only by boat.</p></div>
   </div>
@@ -290,12 +307,12 @@ def content_chankanaab_guide() -> str:
     snap = snapshot_default(best_for="Chankanaab park planning", popular="Park pass, snorkel, dolphins")
     return f"""<section class="pt-8 pb-4 bg-white"><div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"><div class="grid lg:grid-cols-2 gap-12 items-start">
   <div>
-    <p class="text-gray-600 leading-relaxed mb-6">Chankanaab National Marine Park is 15–20 minutes south of Cozumel cruise piers — a protected lagoon, beach, house reef snorkel, sea lion and dolphin programs, botanical gardens and restaurants in one ticketed destination.</p>
+    <p class="text-gray-600 leading-relaxed mb-6">Chankanaab National Marine Park sits south of the main cruise piers — lagoon and beach areas, a house reef snorkel zone, optional animal programs where offered, gardens and food outlets in one ticketed destination. Allow for transfer time that varies with pier and traffic.</p>
     <ul class="space-y-3 mb-6 text-sm text-gray-600">
-      <li class="flex gap-2"><span class="text-ocean-500">✓</span>Organised tours include transport and timed return to ship.</li>
-      <li class="flex gap-2"><span class="text-ocean-500">✓</span>House reef snorkel suitable for beginners with rental gear on site.</li>
-      <li class="flex gap-2"><span class="text-ocean-500">✓</span>Discover scuba and one-tank dives available inside the park.</li>
-      <li class="flex gap-2"><span class="text-ocean-500">✓</span>Lockers, showers and multiple food outlets inside the park.</li>
+      <li class="flex gap-2"><span class="text-ocean-500">✓</span>Organised tours often include transport and a timed return plan — confirm details.</li>
+      <li class="flex gap-2"><span class="text-ocean-500">✓</span>House reef snorkel is commonly available; rental gear policies vary.</li>
+      <li class="flex gap-2"><span class="text-ocean-500">✓</span>Introductory scuba may be offered inside or near the park depending on operator.</li>
+      <li class="flex gap-2"><span class="text-ocean-500">✓</span>Lockers, showers and food outlets are typically available on site.</li>
     </ul>
     <a href="chankanaab-park-tour.html" class="btn-ocean inline-flex items-center text-white font-semibold px-6 py-3 rounded-full text-sm">Chankanaab Tour</a>
   </div>
@@ -311,11 +328,11 @@ def content_mr_sanchos_guide() -> str:
     snap = snapshot_default(best_for="Mr Sanchos beach club visit", popular="Day pass, open bar, pool")
     return f"""<section class="pt-8 pb-4 bg-white"><div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"><div class="grid lg:grid-cols-2 gap-12 items-start">
   <div>
-    <p class="text-gray-600 leading-relaxed mb-6">Mr Sanchos Beach Club on Cozumel's west coast is a top cruise passenger pick — all-inclusive food and drinks, freshwater pool, beach loungers and calm Caribbean swimming about 20 minutes from the port by taxi or organised transfer.</p>
+    <p class="text-gray-600 leading-relaxed mb-6">Mr Sanchos on Cozumel’s west coast is a well-known beach-club style option for cruise passengers who want loungers, a pool and a social atmosphere away from the pier. Food, drink and amenity inclusions vary by package and date — confirm what you are buying rather than assuming a fixed “all-inclusive” list. Transfer time depends on which terminal you use and traffic.</p>
     <ul class="space-y-3 mb-6 text-sm text-gray-600">
-      <li class="flex gap-2"><span class="text-ocean-500">✓</span>Pay-one-price packages simplify budgeting for groups.</li>
-      <li class="flex gap-2"><span class="text-ocean-500">✓</span>Pool, beach volleyball and water trampoline activities.</li>
-      <li class="flex gap-2"><span class="text-ocean-500">✓</span>Reserve ahead on busy multi-ship days.</li>
+      <li class="flex gap-2"><span class="text-ocean-500">✓</span>Day-pass style packages can simplify budgeting when inclusions are clear.</li>
+      <li class="flex gap-2"><span class="text-ocean-500">✓</span>Pool and beach facilities are part of the usual club atmosphere — check current amenities.</li>
+      <li class="flex gap-2"><span class="text-ocean-500">✓</span>Reserve ahead on busy multi-ship days when possible.</li>
       <li class="flex gap-2"><span class="text-ocean-500">✓</span>Compare with <a href="cozumel-beach-day.html" class="text-ocean-600">other beach day</a> options.</li>
     </ul>
     <a href="mr-sanchos-beach-club.html" class="btn-ocean inline-flex items-center text-white font-semibold px-6 py-3 rounded-full text-sm">Mr Sanchos Excursion</a>
@@ -329,7 +346,10 @@ def content_mr_sanchos_guide() -> str:
 
 
 def all_guide_content() -> dict[str, str]:
-    return {
+    from cozumel_decisions import content_decision_reef_vs_beach, content_island_vs_mainland
+    from cozumel_legal import all_legal_content
+
+    guides = {
         "home.html": content_home(),
         "best-cozumel-shore-excursions.html": content_best_excursions(),
         "cozumel-port-guide.html": content_port_guide(),
@@ -340,4 +360,8 @@ def all_guide_content() -> dict[str, str]:
         "cozumel-cruise-port-map.html": content_port_map(),
         "chankanaab-park-guide.html": content_chankanaab_guide(),
         "mr-sanchos-cozumel-guide.html": content_mr_sanchos_guide(),
+        "cozumel-island-vs-mainland.html": content_island_vs_mainland(),
+        "cozumel-reef-vs-beach.html": content_decision_reef_vs_beach(),
     }
+    guides.update(all_legal_content())
+    return guides

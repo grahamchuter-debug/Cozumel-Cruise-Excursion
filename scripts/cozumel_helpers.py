@@ -36,7 +36,7 @@ def page_shell(
     trust_attr = '\n  data-trust-strip="partials/trust-strip.html"' if trust else ""
     content_file = content if content.startswith("content/") else f"content/{content}"
     return f"""<!DOCTYPE html>
-<html lang="en">
+<html lang="en-GB">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -111,7 +111,7 @@ def snapshot_default(**overrides: str) -> str:
         best_for="Snorkeling, beach clubs, Chankanaab, jeep tours",
         activity_level="Varies — see comparison",
         family="Excellent with age-appropriate picks",
-        return_ship="Operators usually allow 60–90 min buffer",
+        return_ship="Build your own buffer; confirm ship departure",
         popular="Reef snorkel, beach day, Chankanaab, catamaran",
     )
     defaults.update(overrides)
@@ -121,8 +121,31 @@ def snapshot_default(**overrides: str) -> str:
 def return_to_ship_badge() -> str:
     return (
         f'<span class="return-to-ship-badge" role="status">'
-        f"{SHIP_ICON}Return To Ship On Time</span>"
+        f"{SHIP_ICON}Plan a return buffer</span>"
     )
+
+
+def concierge_panel(*, depth_prefix: str = "") -> str:
+    """Concierge UX with live destination email routed to operations."""
+    return f"""<section class="py-14 bg-white" id="concierge" aria-labelledby="concierge-heading">
+  <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="concierge-panel">
+      <h2 id="concierge-heading" class="font-display font-bold text-2xl sm:text-3xl mb-3">Need help planning your Cozumel port day?</h2>
+      <p class="text-white/90 text-sm sm:text-base leading-relaxed mb-4">
+        Tell us your ship, date and the kind of day you want — reef time, a quiet beach club, ruins, or something easy.
+        We are an independent planning resource, not the cruise line.
+      </p>
+      <p class="text-white/80 text-sm leading-relaxed mb-5">
+        Email <a href="mailto:hello@cozumelcruiseexcursion.com">hello@cozumelcruiseexcursion.com</a> with your ship, date and preferences.
+        We do not promise instant replies or 24/7 staffing.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-3">
+        <a href="mailto:hello@cozumelcruiseexcursion.com" class="btn-primary inline-flex items-center justify-center text-white font-semibold px-6 py-3 rounded-full text-sm no-underline">Email the concierge</a>
+        <a href="{depth_prefix}best-cozumel-shore-excursions.html" class="btn-outline inline-flex items-center justify-center text-white font-semibold px-6 py-3 rounded-full text-sm no-underline">Explore excursions</a>
+      </div>
+    </div>
+  </div>
+</section>"""
 
 
 def best_for_badge(label: str) -> str:
@@ -219,10 +242,10 @@ def internal_links(extra: list[tuple[str, str]] | None = None) -> str:
     base = [
         ("cozumel-port-guide.html", "Port Guide"),
         ("best-cozumel-shore-excursions.html", "Best Excursions"),
+        ("ship-schedule/", "Ship Schedule"),
         ("one-day-in-cozumel-from-a-cruise-ship.html", "One Day Itinerary"),
-        ("best-cozumel-beaches-for-cruise-passengers.html", "Best Beaches"),
-        ("cozumel-snorkeling-tour.html", "Snorkeling"),
-        ("chankanaab-park-guide.html", "Chankanaab Guide"),
+        ("cozumel-island-vs-mainland.html", "Island vs Mainland"),
+        ("cozumel-snorkeling-tour.html", "Snorkelling"),
     ]
     if extra:
         base.extend(extra)
@@ -263,8 +286,8 @@ def content_tour_page(
     img: str,
     alt: str,
     badge: str | None = None,
-    highlights_title: str = "Tour Highlights",
-    highlights_subtitle: str = "What to expect on this Cozumel shore excursion.",
+    highlights_title: str = "What the day involves",
+    highlights_subtitle: str = "Practical notes for cruise passengers — confirm live details with your operator.",
     extra_links: list[tuple[str, str]] | None = None,
 ) -> str:
     bl = "".join(
@@ -279,6 +302,10 @@ def content_tour_page(
         {badge_html}
         <p class="text-gray-600 leading-relaxed mb-6">{intro}</p>
         <ul class="space-y-3 mb-6">{bl}</ul>
+        <div class="bg-sand-50 rounded-2xl p-5 border border-pr-100 text-sm text-gray-600">
+          <p class="font-semibold text-gray-900 mb-2">Cruise passenger checklist</p>
+          <p>Who it suits, how demanding it feels, how much of the call it may consume, and what to compare it with — then check your <a href="ship-schedule/" class="text-ocean-600 font-medium">ship date</a> and <a href="cozumel-port-guide.html" class="text-ocean-600 font-medium">terminal</a>.</p>
+        </div>
       </div>
       <div class="card-media rounded-3xl overflow-hidden aspect-[4/3] shadow-lg">
         <img src="{img}" alt="{alt}" width="600" height="450" loading="lazy" decoding="async" />
@@ -286,7 +313,11 @@ def content_tour_page(
     </div></div></section>
     {highlights}
     <section class="pb-8 bg-white"><div class="max-w-7xl mx-auto px-4">{snap}</div></section>
-    <section class="pb-16 bg-white"><div class="max-w-3xl mx-auto px-4">{internal_links(extra_links)}</div></section>"""
+    <section class="pb-8 bg-white"><div class="max-w-3xl mx-auto px-4 text-sm text-gray-600">
+      <p class="mb-3">This is an editorial planning page, not a live booking checkout. Explore details, compare options, and ask an operator or our concierge (when email routing is live) about fit for your sailing.</p>
+    </div></section>
+    <section class="pb-16 bg-white"><div class="max-w-3xl mx-auto px-4">{internal_links(extra_links)}</div></section>
+    {concierge_panel()}"""
 
 
 def comparison_section() -> str:

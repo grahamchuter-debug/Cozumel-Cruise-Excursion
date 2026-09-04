@@ -2,7 +2,10 @@
   "name": "cozumel-cruise-excursion",
   "private": true,
   "scripts": {
+    "sync:schedules": "node scripts/sync-schedules.mjs",
+    "qa:schedules": "node scripts/qa-schedules.mjs",
     "build": "python3 scripts/build-cozumel-site.py",
+    "build:all": "npm run sync:schedules && npm run qa:schedules && npm run build",
     "images": "python3 scripts/fetch-cozumel-images.py",
     "deploy": "wrangler deploy",
     "preview": "python3 -m http.server 8905"

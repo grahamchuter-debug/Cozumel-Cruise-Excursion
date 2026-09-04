@@ -1,6 +1,9 @@
 #!/usr/bin/env python3
 """Generate Cozumel Cruise Excursion static site files."""
 from pathlib import Path
+import sys
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 from cozumel_config import (
     ACCENT,
@@ -65,25 +68,18 @@ def hero_home() -> str:
     <div class="site-hero__inner max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="max-w-3xl">
         <div class="site-hero__eyebrow inline-flex items-center gap-2 bg-white/15 backdrop-blur-sm border border-white/30 rounded-full px-4 py-1.5 mb-3">
-          <span class="w-2 h-2 rounded-full bg-pr-400 animate-pulse"></span>
-          <span class="text-white/90 text-xs font-semibold tracking-widest uppercase">Cozumel · Mexico</span>
+          <span class="w-2 h-2 rounded-full bg-pr-400"></span>
+          <span class="text-white/90 text-xs font-semibold tracking-widest uppercase">Cozumel · Mexico cruise port</span>
         </div>
         <h1 class="site-hero__title text-4xl sm:text-5xl lg:text-[3.25rem] font-display font-bold text-white leading-tight mb-3">
-          Cozumel Cruise<br/><span class="{ACCENT}">Excursions</span><br/>from the Port
+          Cozumel Shore<br/><span class="{ACCENT}">Excursions</span>
         </h1>
         <p class="site-hero__lead text-base sm:text-lg text-white/85 font-light leading-relaxed mb-5 max-w-2xl">
-          Reef snorkeling, beach clubs, Chankanaab, jeep tours and Mayan ruins — the shore excursions cruise passengers book most in Cozumel, Mexico.
+          Plan your Cozumel port day around your ship, your terminal and the kind of day you actually want — reef, beach club, ruins or something easy.
         </p>
         <div class="site-hero__actions flex flex-col sm:flex-row gap-3">
-          <a href="best-cozumel-shore-excursions.html" class="btn-primary inline-flex items-center justify-center gap-2 text-white font-semibold px-7 py-3 rounded-full text-sm shadow-xl">Compare Excursions</a>
-          <a href="cozumel-snorkeling-tour.html" class="btn-outline inline-flex items-center justify-center gap-2 text-white font-semibold px-7 py-3 rounded-full text-sm">Snorkeling Tours</a>
-        </div>
-        <div class="site-hero__tags flex flex-wrap gap-2 mt-5 pt-4 border-t border-white/20">
-          <span class="inline-flex items-center bg-white/10 border border-white/25 rounded-full px-3.5 py-1.5 text-xs font-semibold text-white">El Cielo</span>
-          <span class="inline-flex items-center bg-white/10 border border-white/25 rounded-full px-3.5 py-1.5 text-xs font-semibold text-white">Chankanaab</span>
-          <span class="inline-flex items-center bg-white/10 border border-white/25 rounded-full px-3.5 py-1.5 text-xs font-semibold text-white">Mr Sanchos</span>
-          <span class="inline-flex items-center bg-white/10 border border-white/25 rounded-full px-3.5 py-1.5 text-xs font-semibold text-white">Cruise Passengers</span>
-          <span class="inline-flex items-center bg-white/10 border border-white/25 rounded-full px-3.5 py-1.5 text-xs font-semibold text-white">MXN &amp; USD</span>
+          <a href="best-cozumel-shore-excursions.html" class="btn-primary inline-flex items-center justify-center gap-2 text-white font-semibold px-7 py-3 rounded-full text-sm shadow-xl">Explore shore excursions</a>
+          <a href="ship-schedule/" class="btn-outline inline-flex items-center justify-center gap-2 text-white font-semibold px-7 py-3 rounded-full text-sm">Find your ship schedule</a>
         </div>
       </div>
     </div>
@@ -137,7 +133,7 @@ HERO_DEFS = {
     ),
     "hero-mr-sanchos-guide.html": hero_inner(
         "Beach Club", f"Mr Sanchos<br/><span class=\"{ACCENT}\">Cozumel Guide</span>",
-        "All-inclusive beach club on Cozumel's west coast — pool, loungers and open bar 20 minutes from port.",
+        "West-coast beach club day — loungers and a slower pace; transfer time depends on pier and traffic.",
         MR_SANCHOS_IMG, MR_SANCHOS_ALT, breadcrumb="Mr Sanchos Guide",
     ),
     "hero-best-of-cozumel.html": hero_inner(
@@ -147,7 +143,7 @@ HERO_DEFS = {
     ),
     "hero-beach-day.html": hero_inner(
         "Beach · Caribbean", f"Cozumel<br/><span class=\"{ACCENT}\">Beach Day</span>",
-        "Loungers, calm turquoise water and all-inclusive beach clubs timed for your cruise schedule.",
+        "Loungers and calm west-coast water — confirm club inclusions for your date.",
         BEACH_DAY_IMG, BEACH_DAY_ALT, breadcrumb="Beach Day",
     ),
     "hero-snorkeling.html": hero_inner(
@@ -157,7 +153,7 @@ HERO_DEFS = {
     ),
     "hero-chankanaab-tour.html": hero_inner(
         "Marine Park Tour", f"Chankanaab<br/><span class=\"{ACCENT}\">Park Tour</span>",
-        "House reef snorkel, beach and family activities 15 minutes from Cozumel cruise port.",
+        "House reef snorkel, beach and park facilities a short transfer from many cruise piers.",
         CHANKANAAB_IMG, CHANKANAAB_ALT, breadcrumb="Chankanaab Tour",
     ),
     "hero-mr-sanchos.html": hero_inner(
@@ -203,9 +199,9 @@ HERO_DEFS = {
 }
 
 PAGE_META = [
-    dict(file="index.html", title=f"{SITE} | Snorkeling, Beaches &amp; Tours from Cozumel Cruise Port",
-         description="Plan Cozumel shore excursions for cruise passengers — reef snorkeling, Chankanaab, Mr Sanchos beach clubs, jeep tours and Mayan ruins from Mexico cruise port.",
-         keywords="Cozumel shore excursions, Cozumel cruise excursions, Cozumel snorkeling tour, Chankanaab cruise excursion, Cozumel beach day",
+    dict(file="index.html", title=f"{SITE} | Shore Excursions &amp; Port-Day Planning",
+         description="Plan your Cozumel cruise port day — reef snorkelling, beach clubs, terminals, island vs mainland and ship schedule for 2026–2027.",
+         keywords="Cozumel shore excursions, Cozumel cruise port, Cozumel ship schedule, Cozumel snorkelling, Cozumel beach day",
          path="", data_page="home", hero="partials/hero-home.html", content="home.html", schema=home_schema(home_faq_data())),
     dict(file="best-cozumel-shore-excursions.html", title="Best Cozumel Shore Excursions | Compare Mexico Cruise Tours",
          description="Compare the best Cozumel shore excursions — snorkeling, beach clubs, Chankanaab, jeep tours, catamaran and Mayan ruins with cruise timing.",
@@ -222,7 +218,7 @@ PAGE_META = [
     dict(file="one-day-in-cozumel-from-a-cruise-ship.html", title="One Day in Cozumel from a Cruise Ship | Port Itinerary",
          description="How to spend one day in Cozumel on a cruise stop — morning snorkel, beach lunch and afternoon downtown with return-to-ship buffer.",
          keywords="one day in Cozumel cruise, Cozumel port day itinerary, cruise stop Cozumel planning",
-         path="one-day-in-cozumel-from-a-cruise-ship.html", data_page="port", hero="partials/hero-one-day.html",
+         path="one-day-in-cozumel-from-a-cruise-ship.html", data_page="oneday", hero="partials/hero-one-day.html",
          content="one-day-in-cozumel-from-a-cruise-ship.html", preload=ONE_DAY_IMG),
     dict(file="best-cozumel-beaches-for-cruise-passengers.html", title="Best Cozumel Beaches for Cruise Passengers | Beach Club Guide",
          description="Best Cozumel beaches for cruise passengers — Mr Sanchos, Chankanaab, west-coast clubs, pier distances and taxi tips.",
@@ -250,7 +246,7 @@ PAGE_META = [
          path="chankanaab-park-guide.html", data_page="chankanaab", hero="partials/hero-chankanaab-guide.html",
          content="chankanaab-park-guide.html", preload=CHANKANAAB_IMG),
     dict(file="mr-sanchos-cozumel-guide.html", title="Mr Sanchos Cozumel Guide | Beach Club for Cruise Passengers",
-         description="Mr Sanchos Beach Club guide for Cozumel cruise passengers — all-inclusive day pass, pool, open bar, taxi distance and booking tips.",
+         description="Mr Sanchos Beach Club guide for Cozumel cruise passengers — beach-club day planning, transfer considerations and what to confirm with operators.",
          keywords="Mr Sanchos Cozumel guide, Mr Sanchos cruise excursion, Mr Sanchos beach club Cozumel",
          path="mr-sanchos-cozumel-guide.html", data_page="beaches", hero="partials/hero-mr-sanchos-guide.html",
          content="mr-sanchos-cozumel-guide.html", preload=MR_SANCHOS_IMG),
@@ -261,7 +257,7 @@ PAGE_META = [
          content="best-of-cozumel.html", preload=BEST_OF_IMG,
          schema=tourist_trip_schema("Best of Cozumel Tour", "Island highlights and culture for Cozumel cruise passengers.")),
     dict(file="cozumel-beach-day.html", title="Cozumel Beach Day | Cruise Shore Excursion Guide",
-         description="Cozumel beach day excursions for cruise passengers — all-inclusive clubs, loungers, calm Caribbean water and cruise-timed returns.",
+         description="Cozumel beach day excursions for cruise passengers — west-coast clubs, loungers and planning around your ship schedule.",
          keywords="Cozumel beach day cruise, Cozumel beach excursion, beach club Cozumel cruise port",
          path="cozumel-beach-day.html", data_page="beaches", hero="partials/hero-beach-day.html",
          content="cozumel-beach-day.html", preload=BEACH_DAY_IMG,
@@ -279,7 +275,7 @@ PAGE_META = [
          content="chankanaab-park-tour.html", preload=CHANKANAAB_IMG,
          schema=tourist_trip_schema("Chankanaab Park Tour", "Marine park shore excursion for Cozumel cruise passengers.")),
     dict(file="mr-sanchos-beach-club.html", title="Mr Sanchos Beach Club | Cozumel Cruise Excursion",
-         description="Mr Sanchos Beach Club excursion for Cozumel cruise passengers — all-inclusive food, drinks, pool and beach loungers with port transfers.",
+         description="Mr Sanchos Beach Club excursion for Cozumel cruise passengers — beach-club day planning with port transfers; confirm inclusions with the operator.",
          keywords="Mr Sanchos beach club, Mr Sanchos Cozumel cruise excursion, all inclusive beach Cozumel",
          path="mr-sanchos-beach-club.html", data_page="beaches", hero="partials/hero-mr-sanchos.html",
          content="mr-sanchos-beach-club.html", preload=MR_SANCHOS_IMG,
@@ -326,35 +322,74 @@ PAGE_META = [
          path="cozumel-scuba-diving-tour.html", data_page="snorkel", hero="partials/hero-scuba.html",
          content="cozumel-scuba-diving-tour.html", preload=SCUBA_IMG,
          schema=tourist_trip_schema("Cozumel Scuba Diving Tour", "Reef scuba diving excursion for Cozumel cruise passengers.")),
+    dict(file="cozumel-island-vs-mainland.html", title="Cozumel Island vs Mainland | Cruise Port Day Decision",
+         description="Should you stay on Cozumel or ferry to the mainland? Practical trade-offs for cruise passengers — time, buffer, ruins and flexibility.",
+         keywords="Cozumel island vs mainland, Cozumel ferry Playa del Carmen, Cozumel mainland excursion cruise",
+         path="cozumel-island-vs-mainland.html", data_page="port", hero="partials/hero-port-guide.html",
+         content="cozumel-island-vs-mainland.html", preload=PORT_IMG),
+    dict(file="cozumel-reef-vs-beach.html", title="Cozumel Reef vs Beach Club | Cruise Passenger Decision",
+         description="Reef snorkel or beach club in Cozumel? Compare boat reef days with west-coast beach clubs for your cruise call.",
+         keywords="Cozumel reef vs beach, Cozumel snorkel or beach club, Cozumel cruise water day",
+         path="cozumel-reef-vs-beach.html", data_page="excursions", hero="partials/hero-snorkeling.html",
+         content="cozumel-reef-vs-beach.html", preload=SNORKEL_IMG),
+    dict(file="about.html", title="About Cozumel Cruise Excursion | Independent Port Planning",
+         description="About Cozumel Cruise Excursion — independent cruise-port planning for Cozumel, Mexico. Not a cruise line or ticket marketplace.",
+         keywords="about Cozumel Cruise Excursion, Cozumel cruise planning guide",
+         path="about.html", data_page="contact", hero="partials/hero-port-guide.html",
+         content="about.html", preload=PORT_IMG),
+    dict(file="contact.html", title="Contact Cozumel Cruise Excursion | Port Day Concierge",
+         description="Contact Cozumel Cruise Excursion for help planning your Cozumel cruise port day. Concierge email activates at launch.",
+         keywords="contact Cozumel Cruise Excursion, Cozumel shore excursion help",
+         path="contact.html", data_page="contact", hero="partials/hero-port-guide.html",
+         content="contact.html", preload=PORT_IMG),
+    dict(file="privacy.html", title="Privacy | Cozumel Cruise Excursion",
+         description="Privacy information for Cozumel Cruise Excursion — static planning site without booking passenger databases in this phase.",
+         keywords="privacy Cozumel Cruise Excursion",
+         path="privacy.html", data_page="contact", hero="partials/hero-port-guide.html",
+         content="privacy.html", preload=PORT_IMG),
+    dict(file="terms.html", title="Terms of Use | Cozumel Cruise Excursion",
+         description="Terms of use for Cozumel Cruise Excursion planning content — schedules and excursion details can change.",
+         keywords="terms Cozumel Cruise Excursion",
+         path="terms.html", data_page="contact", hero="partials/hero-port-guide.html",
+         content="terms.html", preload=PORT_IMG),
+    dict(file="methodology.html", title="How We Assess Cozumel Excursions | Methodology",
+         description="How Cozumel Cruise Excursion assesses shore options — cruise timing, honest claims and authority schedule integrity.",
+         keywords="Cozumel excursion methodology, how we choose Cozumel tours",
+         path="methodology.html", data_page="contact", hero="partials/hero-port-guide.html",
+         content="methodology.html", preload=PORT_IMG),
 ]
 
 
 def nav_html() -> str:
     return f"""<nav class="fixed top-0 left-0 right-0 z-50 bg-white/90 border-b border-pr-100 shadow-sm">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="flex items-center justify-between h-12">
+    <div class="flex items-center justify-between h-14">
       <a href="index.html" class="flex items-center gap-2">
-        <div class="w-7 h-7 rounded-full btn-ocean flex items-center justify-center">
-          <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9V8h2v8zm4 0h-2V8h2v8z"/>
-          </svg>
+        <div class="w-7 h-7 rounded-full btn-ocean flex items-center justify-center" aria-hidden="true">
+          <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9V8h2v8zm4 0h-2V8h2v8z"/></svg>
         </div>
         <span class="font-display font-semibold text-ocean-800 text-base leading-tight">Cozumel<br/><span class="text-[10px] font-body font-normal text-pr-600 tracking-widest uppercase">Cruise Excursion</span></span>
       </a>
       <div class="hidden lg:flex items-center gap-5 text-sm font-medium">
         <a href="index.html" data-nav="home" class="text-gray-600 hover:text-ocean-600 transition-colors">Home</a>
         <a href="best-cozumel-shore-excursions.html" data-nav="excursions" class="text-gray-600 hover:text-ocean-600 transition-colors">Excursions</a>
-        <a href="cozumel-snorkeling-tour.html" data-nav="snorkel" class="text-gray-600 hover:text-ocean-600 transition-colors">Snorkeling</a>
-        <a href="cozumel-beach-day.html" data-nav="beaches" class="text-gray-600 hover:text-ocean-600 transition-colors">Beaches</a>
-        <a href="chankanaab-park-tour.html" data-nav="chankanaab" class="text-gray-600 hover:text-ocean-600 transition-colors">Chankanaab</a>
         <a href="cozumel-port-guide.html" data-nav="port" class="text-gray-600 hover:text-ocean-600 transition-colors">Port Guide</a>
+        <a href="ship-schedule/" data-nav="schedule" class="text-gray-600 hover:text-ocean-600 transition-colors">Ship Schedule</a>
+        <a href="one-day-in-cozumel-from-a-cruise-ship.html" data-nav="oneday" class="text-gray-600 hover:text-ocean-600 transition-colors">One Day</a>
+        <a href="contact.html" data-nav="contact" class="text-gray-600 hover:text-ocean-600 transition-colors">Contact</a>
       </div>
-      <a href="best-cozumel-shore-excursions.html" class="hidden md:inline-flex items-center gap-2 btn-ocean text-white text-sm font-semibold px-4 py-2 rounded-full shadow-md">
-        Compare Tours
-      </a>
-      <button type="button" class="lg:hidden p-2 rounded-lg text-gray-600 hover:bg-sand-50" aria-label="Open menu">
+      <a href="ship-schedule/" class="hidden md:inline-flex items-center gap-2 btn-ocean text-white text-sm font-semibold px-4 py-2 rounded-full shadow-md">Find your ship</a>
+      <button type="button" class="lg:hidden p-2 rounded-lg text-gray-600 hover:bg-sand-50" aria-label="Open menu" aria-expanded="false" data-nav-toggle>
         <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
       </button>
+    </div>
+    <div class="mobile-nav-panel lg:hidden" data-nav-panel hidden>
+      <a href="index.html" data-nav="home">Home</a>
+      <a href="best-cozumel-shore-excursions.html" data-nav="excursions">Excursions</a>
+      <a href="cozumel-port-guide.html" data-nav="port">Port Guide</a>
+      <a href="ship-schedule/" data-nav="schedule">Ship Schedule</a>
+      <a href="one-day-in-cozumel-from-a-cruise-ship.html" data-nav="oneday">One Day</a>
+      <a href="contact.html" data-nav="contact">Contact</a>
     </div>
   </div>
 </nav>
@@ -367,42 +402,43 @@ def footer_html() -> str:
       <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
         <div class="sm:col-span-2 lg:col-span-1">
           <a href="index.html" class="font-display font-semibold text-white text-lg">{SITE}</a>
-          <p class="mt-3 text-sm leading-relaxed">Planning guide for cruise visitors to Cozumel, Mexico. Not affiliated with any cruise line.</p>
+          <p class="mt-3 text-sm leading-relaxed">Independent planning guide for cruise visitors to Cozumel, Mexico. Not affiliated with any cruise line.</p>
+          <p class="mt-3 text-xs leading-relaxed">Regional context: <a href="https://caribbeanshoreexcursion.com/" class="hover:text-white transition-colors">Caribbean Shore Excursions</a></p>
         </div>
         <div>
           <h3 class="text-white text-sm font-semibold uppercase tracking-wider mb-4">Excursions</h3>
           <ul class="space-y-2 text-sm">
-            <li><a href="best-of-cozumel.html" class="hover:text-white transition-colors">Best of Cozumel</a></li>
-            <li><a href="cozumel-beach-day.html" class="hover:text-white transition-colors">Beach Day</a></li>
-            <li><a href="cozumel-snorkeling-tour.html" class="hover:text-white transition-colors">Snorkeling Tour</a></li>
-            <li><a href="chankanaab-park-tour.html" class="hover:text-white transition-colors">Chankanaab Park</a></li>
-            <li><a href="mr-sanchos-beach-club.html" class="hover:text-white transition-colors">Mr Sanchos Beach Club</a></li>
-            <li><a href="cozumel-jeep-tour.html" class="hover:text-white transition-colors">Jeep Tour</a></li>
-            <li><a href="cozumel-mayan-ruins-tour.html" class="hover:text-white transition-colors">Mayan Ruins</a></li>
-            <li><a href="cozumel-catamaran-sail-and-snorkel.html" class="hover:text-white transition-colors">Catamaran Sail &amp; Snorkel</a></li>
-            <li><a href="cozumel-atv-adventure.html" class="hover:text-white transition-colors">ATV Adventure</a></li>
-            <li><a href="cozumel-tequila-tasting-tour.html" class="hover:text-white transition-colors">Tequila Tasting</a></li>
-            <li><a href="cozumel-private-island-tour.html" class="hover:text-white transition-colors">Private Island Tour</a></li>
-            <li><a href="cozumel-scuba-diving-tour.html" class="hover:text-white transition-colors">Scuba Diving</a></li>
+            <li><a href="best-cozumel-shore-excursions.html" class="hover:text-white transition-colors">Best excursions</a></li>
+            <li><a href="cozumel-snorkeling-tour.html" class="hover:text-white transition-colors">Snorkelling</a></li>
+            <li><a href="cozumel-beach-day.html" class="hover:text-white transition-colors">Beach day</a></li>
+            <li><a href="chankanaab-park-tour.html" class="hover:text-white transition-colors">Chankanaab</a></li>
+            <li><a href="mr-sanchos-beach-club.html" class="hover:text-white transition-colors">Mr Sanchos</a></li>
+            <li><a href="cozumel-mayan-ruins-tour.html" class="hover:text-white transition-colors">Mayan ruins</a></li>
+            <li><a href="cozumel-island-vs-mainland.html" class="hover:text-white transition-colors">Island vs mainland</a></li>
           </ul>
         </div>
         <div>
-          <h3 class="text-white text-sm font-semibold uppercase tracking-wider mb-4">Guides</h3>
+          <h3 class="text-white text-sm font-semibold uppercase tracking-wider mb-4">Plan</h3>
           <ul class="space-y-2 text-sm">
-            <li><a href="best-cozumel-shore-excursions.html" class="hover:text-white transition-colors">Best Excursions</a></li>
-            <li><a href="cozumel-port-guide.html" class="hover:text-white transition-colors">Port Guide</a></li>
-            <li><a href="one-day-in-cozumel-from-a-cruise-ship.html" class="hover:text-white transition-colors">One Day in Cozumel</a></li>
-            <li><a href="best-cozumel-beaches-for-cruise-passengers.html" class="hover:text-white transition-colors">Best Beaches</a></li>
-            <li><a href="is-cozumel-safe-for-cruise-passengers.html" class="hover:text-white transition-colors">Safety Guide</a></li>
-            <li><a href="can-you-explore-cozumel-without-an-excursion.html" class="hover:text-white transition-colors">Without an Excursion</a></li>
-            <li><a href="cozumel-cruise-port-map.html" class="hover:text-white transition-colors">Port Map</a></li>
-            <li><a href="chankanaab-park-guide.html" class="hover:text-white transition-colors">Chankanaab Guide</a></li>
-            <li><a href="mr-sanchos-cozumel-guide.html" class="hover:text-white transition-colors">Mr Sanchos Guide</a></li>
+            <li><a href="cozumel-port-guide.html" class="hover:text-white transition-colors">Port guide</a></li>
+            <li><a href="ship-schedule/" class="hover:text-white transition-colors">Ship schedule</a></li>
+            <li><a href="one-day-in-cozumel-from-a-cruise-ship.html" class="hover:text-white transition-colors">One day in Cozumel</a></li>
+            <li><a href="cozumel-reef-vs-beach.html" class="hover:text-white transition-colors">Reef vs beach</a></li>
+            <li><a href="methodology.html" class="hover:text-white transition-colors">Methodology</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-white text-sm font-semibold uppercase tracking-wider mb-4">Site</h3>
+          <ul class="space-y-2 text-sm">
+            <li><a href="about.html" class="hover:text-white transition-colors">About</a></li>
+            <li><a href="contact.html" class="hover:text-white transition-colors">Contact</a></li>
+            <li><a href="privacy.html" class="hover:text-white transition-colors">Privacy</a></li>
+            <li><a href="terms.html" class="hover:text-white transition-colors">Terms</a></li>
           </ul>
         </div>
       </div>
       <div class="border-t border-gray-800 pt-8 text-xs text-center sm:text-left">
-        <p>&copy; 2026 {SITE}. Verify times and prices with operators before booking.</p>
+        <p>&copy; 2026 {SITE}. Schedules and excursion details can change — confirm with your cruise line and operators.</p>
       </div>
     </div>
   </footer>
@@ -410,13 +446,13 @@ def footer_html() -> str:
 
 
 def trust_strip_html() -> str:
-    return """<section class="trust-strip" aria-label="Cozumel shore excursion highlights">
+    return """<section class="trust-strip" aria-label="Cozumel planning highlights">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <ul class="trust-strip__list">
-      <li class="trust-strip__item"><span class="trust-strip__check" aria-hidden="true">✔</span> Reef Snorkeling</li>
-      <li class="trust-strip__item"><span class="trust-strip__check" aria-hidden="true">✔</span> Beach Clubs</li>
-      <li class="trust-strip__item"><span class="trust-strip__check" aria-hidden="true">✔</span> Chankanaab Park</li>
-      <li class="trust-strip__item"><span class="trust-strip__check" aria-hidden="true">✔</span> Cruise-Friendly Returns</li>
+      <li class="trust-strip__item"><span class="trust-strip__check" aria-hidden="true">✔</span> Cruise-specific planning</li>
+      <li class="trust-strip__item"><span class="trust-strip__check" aria-hidden="true">✔</span> Terminal guidance</li>
+      <li class="trust-strip__item"><span class="trust-strip__check" aria-hidden="true">✔</span> Authority ship schedule</li>
+      <li class="trust-strip__item"><span class="trust-strip__check" aria-hidden="true">✔</span> Honest, non-booking CTAs</li>
     </ul>
   </div>
 </section>
@@ -457,8 +493,29 @@ def main() -> None:
 
     write("robots.txt", f"User-agent: *\nAllow: /\n\nSitemap: {DOMAIN}/sitemap.xml\n")
 
+    # Schedule pages (requires prior npm run sync:schedules)
+    schedule_entries = []
+    try:
+        from generate_schedule_pages import main as gen_schedules
+        schedule_entries = gen_schedules()
+    except SystemExit as e:
+        print(f"  schedule generation skipped/failed: {e}")
+    except Exception as e:
+        print(f"  schedule generation error: {e}")
+
+    extra_pages = [
+        ("cozumel-island-vs-mainland.html", "0.8", "monthly"),
+        ("cozumel-reef-vs-beach.html", "0.8", "monthly"),
+        ("about.html", "0.5", "yearly"),
+        ("contact.html", "0.6", "yearly"),
+        ("privacy.html", "0.3", "yearly"),
+        ("terms.html", "0.3", "yearly"),
+        ("methodology.html", "0.5", "yearly"),
+    ]
+    all_sitemap = list(SITEMAP_PAGES) + extra_pages + list(schedule_entries)
+
     lines = ['<?xml version="1.0" encoding="UTF-8"?>', '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
-    for loc, priority, freq in SITEMAP_PAGES:
+    for loc, priority, freq in all_sitemap:
         url = f"{DOMAIN}/{loc}" if loc else f"{DOMAIN}/"
         lines += [
             "  <url>",
@@ -475,7 +532,10 @@ def main() -> None:
   "name": "cozumel-cruise-excursion",
   "private": true,
   "scripts": {
+    "sync:schedules": "node scripts/sync-schedules.mjs",
+    "qa:schedules": "node scripts/qa-schedules.mjs",
     "build": "python3 scripts/build-cozumel-site.py",
+    "build:all": "npm run sync:schedules && npm run qa:schedules && npm run build",
     "images": "python3 scripts/fetch-cozumel-images.py",
     "deploy": "wrangler deploy",
     "preview": "python3 -m http.server 8905"
@@ -525,12 +585,7 @@ echo "Done. Check {DOMAIN}/ shortly."
             continue
         p.write_bytes(PLACEHOLDER_PNG)
 
-    write("images/ATTRIBUTION.md", """# Image attribution
-
-Hero and content images are sourced from [Unsplash](https://unsplash.com) under the [Unsplash License](https://unsplash.com/license).
-
-Run `npm run images` to download stock photos. Replace any image with your own assets — keep filenames consistent with `scripts/cozumel_config.py`.
-""")
+    # Do not overwrite images/ATTRIBUTION.md — provenance is maintained separately.
 
     print("Done.")
 

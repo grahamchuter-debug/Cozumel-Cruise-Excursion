@@ -50,10 +50,10 @@ BEACHES_ALT = (
     "Sunny Cozumel Mexico beach with palm trees, wooden lounge chairs and "
     "turquoise Caribbean water for cruise passenger beach days"
 )
-CRYSTAL_IMG = "images/cozumel-beach-crystal.png"
+CRYSTAL_IMG = "images/cozumel-beach-crystal.jpg"
 CRYSTAL_ALT = (
-    "Crystal clear shallow turquoise water with white sandy seafloor in Cozumel "
-    "Mexico ideal for cruise passenger beach and snorkel excursions"
+    "West-coast Cozumel beach with clear turquoise water and palm trees — "
+    "representative shoreline for cruise beach days (Wikimedia Commons)"
 )
 
 BEST_OF_IMG = "images/best-of-cozumel.png"
@@ -76,10 +76,10 @@ CHANKANAAB_ALT = (
     "Welcome to Chankanaab Park entrance booth with thatched palapa roof, "
     "tropical palm trees and paved roadway for Cozumel Mexico cruise passengers"
 )
-MR_SANCHOS_IMG = "images/mr-sanchos.png"
+MR_SANCHOS_IMG = "images/mr-sanchos.jpg"
 MR_SANCHOS_ALT = (
-    "Tropical beach club setting in Cozumel Mexico with palm trees, loungers and "
-    "turquoise Caribbean water for Mr Sanchos-style cruise beach days"
+    "Beach loungers and palapas on a Cozumel shoreline — representative beach-club "
+    "setting for cruise days (not a confirmed Mr Sanchos property photograph)"
 )
 JEEP_IMG = "images/cozumel-jeep-tour.png"
 JEEP_ALT = (
@@ -91,30 +91,30 @@ RUINS_ALT = (
     "San Gervasio Mayan ruins archaeological site in Cozumel Mexico on a "
     "cruise shore excursion tour"
 )
-CATAMARAN_IMG = "images/cozumel-catamaran.png"
+CATAMARAN_IMG = "images/cozumel-catamaran.jpg"
 CATAMARAN_ALT = (
-    "Crystal clear turquoise Caribbean water off Cozumel Mexico for catamaran "
-    "sail and snorkel cruise shore excursions"
+    "Twin-hulled catamaran on a tropical beach — representative sail-and-snorkel "
+    "imagery (not a Cozumel pier photograph)"
 )
 EL_CIELO_IMG = "images/el-cielo-sandbar.png"
 EL_CIELO_ALT = (
     "Starfish on white sand at El Cielo sandbar in Cozumel Mexico shallow "
     "turquoise water on a cruise passenger snorkel excursion"
 )
-ATV_IMG = "images/cozumel-atv.png"
+ATV_IMG = "images/cozumel-atv.jpg"
 ATV_ALT = (
-    "ATV adventure tour through jungle trails on Cozumel Mexico island for "
-    "cruise passenger shore excursions"
+    "ATV / quad bike riding on open sand — representative adventure imagery "
+    "(not a Cozumel jungle-trail photograph)"
 )
-TEQUILA_IMG = "images/cozumel-tequila.png"
+TEQUILA_IMG = "images/cozumel-tequila.jpg"
 TEQUILA_ALT = (
-    "Tequila tasting setup with agave spirits at a Cozumel Mexico hacienda "
-    "on a cruise passenger cultural tour"
+    "Silver, reposado and añejo tequila bottles with tasting glasses — "
+    "representative tasting imagery for cultural shore excursions"
 )
-PRIVATE_ISLAND_IMG = "images/cozumel-private-island.png"
+PRIVATE_ISLAND_IMG = "images/cozumel-private-island.jpg"
 PRIVATE_ISLAND_ALT = (
-    "Crystal clear shallow turquoise water near Cozumel Mexico for private "
-    "island and sandbar cruise shore excursions"
+    "Palancar Beach shoreline in Cozumel with clear water and palms — "
+    "representative secluded-beach / boat-day atmosphere (Wikimedia Commons)"
 )
 SCUBA_IMG = "images/cozumel-scuba.png"
 SCUBA_ALT = (

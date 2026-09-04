@@ -1,0 +1,18 @@
+{
+  "portSlug": "cozumel",
+  "destinationName": "Cozumel",
+  "domain": "https://cozumelcruiseexcursion.com",
+  "siteName": "Cozumel Cruise Excursion",
+  "authoritySource": "../caribbean-shore-excursions/data/imported-schedules/cozumel.json",
+  "localOutput": "data/generated/cozumel-schedules.json",
+  "scheduleHubPath": "ship-schedule",
+  "expectedTotals": {
+    "total": 1861,
+    "byYear": {
+      "2026": 687,
+      "2027": 1174,
+      "2028": 0
+    }
+  },
+  "notes": "GENERATED FROM CARIBBEAN AUTHORITY — DO NOT MANUALLY EDIT schedule output files."
+}

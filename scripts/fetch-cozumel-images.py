@@ -1,5 +1,9 @@
 #!/usr/bin/env python3
-"""Download hero and content images from Unsplash (Unsplash License)."""
+"""Download Unsplash assets still managed by this script.
+
+Wikimedia remediations for tequila/ATV/catamaran/beach assets are documented in
+images/ATTRIBUTION.md and are not overwritten here.
+"""
 from __future__ import annotations
 
 import subprocess
@@ -9,31 +13,9 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 IMAGES = ROOT / "images"
 
-CUSTOM_IMAGES: frozenset[str] = frozenset({
-    "hero-cozumel.png",
-    "cozumel-intro.png",
-    "best-cozumel-excursions.png",
-    "one-day-cozumel.png",
-    "best-of-cozumel.png",
-    "cozumel-beaches.png",
-    "cozumel-beach-day.png",
-    "cozumel-beach-crystal.png",
-    "cozumel-snorkeling.png",
-    "cozumel-scuba.png",
-    "chankanaab-park.png",
-    "mr-sanchos.png",
-    "cozumel-catamaran.png",
-    "cozumel-private-island.png",
-    "cozumel-cruise-port.png",
-    "cozumel-cruise-port-arrival.png",
-    "el-cielo-sandbar.png",
-})
-
 DOWNLOADS: list[tuple[str, str, int]] = [
     ("cozumel-jeep-tour.png", "bHavJvvmcAU", 1920),
     ("cozumel-mayan-ruins.png", "PsgyWVeJjOA", 1920),
-    ("cozumel-atv.png", "bHavJvvmcAU", 1920),
-    ("cozumel-tequila.png", "PsgyWVeJjOA", 1920),
 ]
 
 
@@ -57,17 +39,15 @@ def download(filename: str, slug: str, width: int) -> bool:
 
 
 def main() -> None:
-    IMAGES.mkdir(parents=True, exist_ok=True)
-    print("Downloading Cozumel images from Unsplash…")
+    IMAGES.mkdir(exist_ok=True)
+    print("Downloading Unsplash images for Cozumel…")
     failed = 0
     for filename, slug, width in DOWNLOADS:
-        if filename in CUSTOM_IMAGES:
-            continue
         if not download(filename, slug, width):
             failed += 1
     if failed:
         raise SystemExit(f"{failed} download(s) failed.")
-    print("Done.")
+    print("Done. See images/ATTRIBUTION.md for Wikimedia assets.")
 
 
 if __name__ == "__main__":
